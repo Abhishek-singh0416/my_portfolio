@@ -1,0 +1,911 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Work - Abhishek Singh | Data Science, Flutter & Web | Crystallite Infotech</title>
+<meta name="description" content="Abhishek Singh Complete Work Portfolio: 15+ Live Projects, Data Science, Flutter Apps, Web Development. Hicar, SmartBill AI, Excellence E-Learning, Crystallite Infotech. Gurugram Developer.">
+<meta name="keywords" content="Abhishek Singh work, Crystallite Infotech projects, Flutter apps Gurugram, data science portfolio, Hicar app, SmartBill AI">
+<meta name="author" content="Abhishek Singh">
+<meta property="og:title" content="Abhishek Singh | Complete Work Portfolio - Crystallite Infotech">
+<meta property="og:description" content="Live Projects: Hicar (Ola/Uber clone), SmartBill AI, Excellence E-Learning, Play Store Analysis, Netflix ML. 95% accuracy models deployed.">
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<style>
+:root {
+  --bg-primary: #0a0a0f;
+  --surface: rgba(15, 15, 25, 0.95);
+  --glass: rgba(20, 20, 35, 0.85);
+  --text-primary: #ffffff;
+  --text-secondary: #a0a0c0;
+  --accent: #00d4ff;
+  --accent-2: #7c3aed;
+  --accent-3: #00ff88;
+  --gradient-main: linear-gradient(135deg, #00d4ff 0%, #7c3aed 50%, #00ff88 100%);
+  --gradient-gold: linear-gradient(135deg, #ffd700 0%, #ffed4e 50%, #ffb347 100%);
+  --gradient-glass: linear-gradient(135deg, rgba(0, 212, 255, 0.1) 0%, rgba(124, 58, 237, 0.1) 100%);
+  --shadow: 0 35px 120px rgba(0, 0, 0, 0.6);
+  --shadow-hover: 0 60px 200px rgba(0, 212, 255, 0.4);
+  --border-glow: 0 0 0 1px rgba(0, 212, 255, 0.5);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { 
+  scroll-behavior: smooth; 
+  overflow-x: hidden; 
+  scroll-padding-top: 120px;
+}
+
+body { 
+  font-family: 'Inter', sans-serif; 
+  background: radial-gradient(ellipse at top, #0a0a0f 0%, #000000 70%);
+  color: var(--text-primary);
+  line-height: 1.7;
+  min-height: 100vh;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(circle at 20% 10%, rgba(0, 212, 255, 0.3) 0%, transparent 50%),
+    radial-gradient(circle at 80% 90%, rgba(124, 58, 237, 0.25) 0%, transparent 50%),
+    radial-gradient(circle at 10% 80%, rgba(0, 255, 136, 0.2) 0%, transparent 50%);
+  z-index: -1;
+  animation: bgFloat 20s ease-in-out infinite;
+}
+
+@keyframes bgFloat {
+  0%, 100% { transform: scale(1) rotate(0deg); }
+  50% { transform: scale(1.05) rotate(0.5deg); }
+}
+
+/* HEADER */
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 10000;
+  background: rgba(10, 10, 15, 0.98);
+  backdrop-filter: blur(50px) saturate(180%);
+  border-bottom: 1px solid rgba(0, 212, 255, 0.3);
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.header-content {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 20px 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header.scrolled { 
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(0, 212, 255, 0.5);
+  box-shadow: var(--shadow);
+}
+
+.logo {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(1.8rem, 3.5vw, 2.4rem);
+  font-weight: 900;
+  background: var(--gradient-main);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+nav a {
+  color: var(--text-primary);
+  text-decoration: none;
+  font-weight: 600;
+  margin-left: 48px;
+  position: relative;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  font-size: 1.1rem;
+}
+
+nav a::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background: var(--gradient-gold);
+  border-radius: 2px;
+  transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+nav a:hover, nav a.active { 
+  color: var(--accent);
+  transform: translateY(-3px);
+  text-shadow: 0 0 20px rgba(0, 212, 255, 0.6);
+}
+
+nav a:hover::after, nav a.active::after { width: 100%; }
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 6px;
+  cursor: pointer;
+  padding: 8px;
+}
+
+.hamburger span {
+  width: 32px;
+  height: 4px;
+  background: var(--gradient-main);
+  border-radius: 3px;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 2px 10px rgba(0, 212, 255, 0.4);
+}
+
+.hamburger.active span:nth-child(1) { 
+  transform: rotate(45deg) translate(8px, 8px); 
+}
+.hamburger.active span:nth-child(2) { 
+  opacity: 0; 
+}
+.hamburger.active span:nth-child(3) { 
+  transform: rotate(-45deg) translate(8px, -8px); 
+}
+
+/* HERO SECTION */
+.work-hero {
+  min-height: 100vh;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 220px 5% 120px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(6rem, 14vw, 10rem);
+  font-weight: 900;
+  background: var(--gradient-main);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 24px;
+  animation: titleGlow 4s ease-in-out infinite alternate;
+  text-shadow: 0 0 60px rgba(0, 212, 255, 0.6);
+}
+
+@keyframes titleGlow {
+  0% { filter: drop-shadow(0 0 30px rgba(0, 212, 255, 0.5)); }
+  100% { filter: drop-shadow(0 0 60px rgba(0, 212, 255, 0.9)); }
+}
+
+.hero-subtitle {
+  font-size: clamp(1.6rem, 4.5vw, 2.2rem);
+  color: var(--text-secondary);
+  max-width: 900px;
+  line-height: 1.8;
+  margin-bottom: 40px;
+}
+
+/* PROJECTS GRID */
+.work-stats {
+  max-width: 1400px;
+  margin: 0 auto 120px;
+  padding: 0 5%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 40px;
+}
+
+.stat-item {
+  background: var(--glass);
+  backdrop-filter: blur(60px);
+  border-radius: 32px;
+  padding: 48px 32px;
+  text-align: center;
+  border: 1px solid rgba(0, 212, 255, 0.3);
+  transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.stat-item:hover {
+  transform: translateY(-20px);
+  box-shadow: var(--shadow-hover);
+  border-color: rgba(0, 212, 255, 0.7);
+}
+
+.stat-number {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(3rem, 8vw, 5rem);
+  font-weight: 900;
+  background: var(--gradient-gold);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 16px;
+}
+
+.stat-label {
+  font-size: 1.3rem;
+  color: var(--text-primary);
+  font-weight: 700;
+}
+
+/* PROJECTS SECTION */
+.projects-section {
+  max-width: 1400px;
+  margin: 0 auto 120px;
+  padding: 120px 5%;
+}
+
+.section-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(3.5rem, 8vw, 5rem);
+  font-weight: 900;
+  background: var(--gradient-gold);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+  margin-bottom: 80px;
+  text-shadow: 0 0 40px rgba(255, 215, 0, 0.5);
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(420px, 1fr));
+  gap: 48px;
+}
+
+.project-card {
+  background: var(--glass);
+  backdrop-filter: blur(70px);
+  border-radius: 36px;
+  overflow: hidden;
+  border: 1px solid rgba(0, 212, 255, 0.2);
+  transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  cursor: pointer;
+  position: relative;
+}
+
+.project-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 6px;
+  background: var(--gradient-main);
+  transform: scaleX(0);
+  transition: transform 0.8s ease;
+}
+
+.project-card:hover::before {
+  transform: scaleX(1);
+}
+
+.project-card:hover {
+  transform: translateY(-30px) scale(1.02);
+  box-shadow: 0 80px 250px rgba(0, 212, 255, 0.4);
+  border-color: rgba(0, 212, 255, 0.5);
+}
+
+.project-image {
+  height: 280px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  transition: all 1s ease;
+}
+
+.project-card:hover .project-image {
+  transform: scale(1.1);
+  filter: brightness(1.15) contrast(1.2);
+}
+
+.project-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--gradient-main);
+  opacity: 0;
+  transition: opacity 0.8s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 24px;
+  text-align: center;
+}
+
+.project-card:hover .project-overlay {
+  opacity: 0.95;
+}
+
+.project-overlay h3 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 2rem;
+  font-weight: 900;
+  color: white;
+  margin-bottom: 16px;
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+}
+
+.project-overlay p {
+  color: rgba(255, 255, 255, 0.95);
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.project-content {
+  padding: 48px 40px 40px;
+}
+
+.project-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 800;
+  margin-bottom: 16px;
+  color: var(--text-primary);
+}
+
+.project-description {
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 32px;
+}
+
+.project-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 32px;
+}
+
+.tech-tag {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--text-primary);
+  padding: 8px 20px;
+  border-radius: 25px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border: 1px solid rgba(0, 212, 255, 0.3);
+}
+
+.project-links {
+  display: flex;
+  gap: 16px;
+}
+
+.btn {
+  padding: 14px 28px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.95rem;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  backdrop-filter: blur(20px);
+}
+
+.btn-primary {
+  background: var(--gradient-main);
+  color: white;
+  box-shadow: 0 15px 40px rgba(0, 212, 255, 0.4);
+  border: 1px solid rgba(0, 212, 255, 0.3);
+}
+
+.btn-secondary {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--text-primary);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.btn:hover {
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4);
+}
+
+/* TESTIMONIALS */
+.testimonials-section {
+  max-width: 1400px;
+  margin: 0 auto 120px;
+  padding: 120px 5%;
+  background: rgba(20, 20, 35, 0.3);
+  border-radius: 40px;
+  backdrop-filter: blur(50px);
+  border: 1px solid rgba(0, 212, 255, 0.2);
+  margin: 120px auto;
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+  gap: 40px;
+  margin-top: 60px;
+}
+
+.testimonial-card {
+  background: var(--glass);
+  backdrop-filter: blur(60px);
+  border-radius: 32px;
+  padding: 48px 40px;
+  border: 1px solid rgba(0, 212, 255, 0.2);
+  transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  position: relative;
+  overflow: hidden;
+}
+
+.testimonial-card::before {
+  content: '"';
+  position: absolute;
+  top: 32px;
+  left: 32px;
+  font-size: 6rem;
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 900;
+  color: rgba(0, 212, 255, 0.2);
+  line-height: 1;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-20px);
+  box-shadow: var(--shadow-hover);
+}
+
+.testimonial-text {
+  font-size: 1.15rem;
+  line-height: 1.8;
+  color: var(--text-secondary);
+  margin-bottom: 32px;
+  position: relative;
+  z-index: 1;
+}
+
+.testimonial-author {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.author-avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: var(--gradient-main);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1.4rem;
+  color: white;
+}
+
+.author-info h4 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 800;
+  margin-bottom: 4px;
+}
+
+.author-role {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hamburger { display: flex; }
+  nav { 
+    position: fixed;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: var(--glass);
+    backdrop-filter: blur(50px);
+    flex-direction: column;
+    padding: 2rem;
+    gap: 2rem;
+    transform: translateY(-100%);
+    opacity: 0;
+    transition: all 0.5s ease;
+  }
+  nav.active {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  
+  .work-hero { padding: 180px 5% 80px; }
+  .projects-grid { grid-template-columns: 1fr; }
+  .testimonials-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 480px) {
+  .projects-grid { gap: 32px; }
+  .project-content { padding: 32px 24px 24px; }
+}
+</style>
+</head>
+
+<body>
+<!-- HEADER -->
+<header id="header">
+  <div class="header-content">
+    <div class="logo">Abhishek Singh</div>
+    
+    <nav id="nav">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="projects.html">Projects</a>
+      <a href="work.html" class="active">Work</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    
+    <div class="hamburger" id="hamburger">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</header>
+
+<!-- HERO SECTION -->
+<section class="work-hero">
+  <h1 class="hero-title">My Work</h1>
+  <p class="hero-subtitle">
+    Complete portfolio of 15+ production-ready projects across Data Science, Flutter Development, 
+    and Web Applications for Crystallite Infotech
+  </p>
+</section>
+
+<!-- WORK STATS -->
+<section class="work-stats">
+  <div class="stat-item">
+    <div class="stat-number">15+</div>
+    <div class="stat-label">Production Projects</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-number">5+</div>
+    <div class="stat-label">Live Applications</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-number">95%</div>
+    <div class="stat-label">Model Accuracy</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-number">50K+</div>
+    <div class="stat-label">Data Analyzed</div>
+  </div>
+</section>
+
+<!-- PROJECTS SECTION -->
+<section class="projects-section">
+  <h2 class="section-title">Featured Works</h2>
+  
+  <div class="projects-grid">
+    <!-- HICAR APP -->
+    <div class="project-card">
+      <div class="project-image" style="background-image: url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=420&h=280&fit=crop')">
+        <div class="project-overlay">
+          <h3>Hicar</h3>
+          <p>Complete Ola/Uber clone with driver booking, real-time tracking, and payment integration</p>
+        </div>
+      </div>
+      <div class="project-content">
+        <h3 class="project-title">Hicar - Ride Booking Platform</h3>
+        <p class="project-description">
+          Full-stack ride-hailing application with GPS tracking, driver assignment, 
+          payment gateway, and admin dashboard. Deployed on Play Store.
+        </p>
+        <div class="project-tech">
+          <span class="tech-tag">Flutter</span>
+          <span class="tech-tag">Firebase</span>
+          <span class="tech-tag">Google Maps</span>
+          <span class="tech-tag">Razorpay</span>
+        </div>
+        <div class="project-links">
+          <a href="https://play.google.com/store/apps/details?id=com.crystallite.hicar" class="btn btn-primary">
+            <i class="fab fa-google-play"></i> Play Store
+          </a>
+          <a href="#" class="btn btn-secondary">
+            <i class="fas fa-globe"></i> Live Demo
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- SMARTBILL AI -->
+    <div class="project-card">
+      <div class="project-image" style="background-image: url('https://images.unsplash.com/photo-1614161358179-7b3a56975da7?w=420&h=280&fit=crop')">
+        <div class="project-overlay">
+          <h3>SmartBill AI</h3>
+          <p>AI-powered invoice automation and expense management system</p>
+        </div>
+      </div>
+      <div class="project-content">
+        <h3 class="project-title">SmartBill AI</h3>
+        <p class="project-description">
+          Computer vision powered invoice scanner with OCR, expense categorization, 
+          and GST compliance. 98% accuracy on Indian invoices.
+        </p>
+        <div class="project-tech">
+          <span class="tech-tag">Flutter</span>
+          <span class="tech-tag">TensorFlow</span>
+          <span class="tech-tag">Firebase ML</span>
+          <span class="tech-tag">Google Cloud</span>
+        </div>
+        <div class="project-links">
+          <a href="https://play.google.com/store/apps/details?id=com.crystallite.smartbill" class="btn btn-primary">
+            <i class="fab fa-google-play"></i> Play Store
+          </a>
+          <a href="#" class="btn btn-secondary">
+            <i class="fas fa-globe"></i> Demo
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- EXCELLENCE E-LEARNING -->
+    <div class="project-card">
+      <div class="project-image" style="background-image: url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=420&h=280&fit=crop')">
+        <div class="project-overlay">
+          <h3>Excellence E-Learning</h3>
+          <p>Complete LMS platform with live classes and certification</p>
+        </div>
+      </div>
+      <div class="project-content">
+        <h3 class="project-title">Excellence E-Learning</h3>
+        <p class="project-description">
+          Full-featured learning management system with live classes, 
+          quizzes, certificates, and student progress tracking.
+        </p>
+        <div class="project-tech">
+          <span class="tech-tag">Flutter</span>
+          <span class="tech-tag">Firebase</span>
+          <span class="tech-tag">Agora Video</span>
+          <span class="tech-tag">Razorpay</span>
+        </div>
+        <div class="project-links">
+          <a href="https://excellence.site" class="btn btn-primary">
+            <i class="fas fa-globe"></i> Live Site
+          </a>
+          <a href="https://play.google.com/store/apps/details?id=com.excellence.learning" class="btn btn-secondary">
+            <i class="fab fa-google-play"></i> App
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- PLAY STORE ANALYSIS -->
+    <div class="project-card">
+      <div class="project-image" style="background-image: url('https://images.unsplash.com/photo-1715024487309-7f23e4d4d7d1?w=420&h=280&fit=crop')">
+        <div class="project-overlay">
+          <h3>Play Store Analysis</h3>
+          <p>Advanced app store analytics dashboard</p>
+        </div>
+      </div>
+      <div class="project-content">
+        <h3 class="project-title">Play Store Analysis Dashboard</h3>
+        <p class="project-description">
+          Analyzed 50K+ Google Play Store apps. Built predictive models for 
+          app ratings, downloads, and revenue estimation. 92% accuracy.
+        </p>
+        <div class="project-tech">
+          <span class="tech-tag">Python</span>
+          <span class="tech-tag">Pandas</span>
+          <span class="tech-tag">Power BI</span>
+          <span class="tech-tag">Machine Learning</span>
+        </div>
+        <div class="project-links">
+          <a href="#" class="btn btn-primary">
+            <i class="fas fa-chart-bar"></i> Dashboard
+          </a>
+          <a href="#" class="btn btn-secondary">
+            <i class="fab fa-github"></i> Code
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- NETFLIX RECOMMENDATION -->
+    <div class="project-card">
+      <div class="project-image" style="background-image: url('https://images.unsplash.com/photo-1489599904618-9ac1f811ee4a?w=420&h=280&fit=crop')">
+        <div class="project-overlay">
+          <h3>Netflix Recommendation</h3>
+          <p>ML-powered content recommendation engine</p>
+        </div>
+      </div>
+      <div class="project-content">
+        <h3 class="project-title">Netflix Recommendation Engine</h3>
+        <p class="project-description">
+          Built collaborative filtering + content-based recommendation system. 
+          Achieved 95% precision on Netflix prize dataset.
+        </p>
+        <div class="project-tech">
+          <span class="tech-tag">Python</span>
+          <span class="tech-tag">Scikit-learn</span>
+          <span class="tech-tag">TensorFlow</span>
+          <span class="tech-tag">Surprise</span>
+        </div>
+        <div class="project-links">
+          <a href="#" class="btn btn-primary">
+            <i class="fas fa-brain"></i> Demo
+          </a>
+          <a href="#" class="btn btn-secondary">
+            <i class="fab fa-github"></i> Repository
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- CRYSTALLITE WEBSITE -->
+    <div class="project-card">
+      <div class="project-image" style="background-image: url('https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=420&h=280&fit=crop')">
+        <div class="project-overlay">
+          <h3>Crystallite.in</h3>
+          <p>Premium business portfolio website</p>
+        </div>
+      </div>
+      <div class="project-content">
+        <h3 class="project-title">Crystallite Infotech</h3>
+        <p class="project-description">
+          Sleek business website with CMS, SEO optimization, 
+          lead generation forms, and performance analytics.
+        </p>
+        <div class="project-tech">
+          <span class="tech-tag">React</span>
+          <span class="tech-tag">Node.js</span>
+          <span class="tech-tag">Firebase</span>
+          <span class="tech-tag">Google Analytics</span>
+        </div>
+        <div class="project-links">
+          <a href="https://crystallite.in" class="btn btn-primary">
+            <i class="fas fa-globe"></i> Live Site
+          </a>
+          <a href="#" class="btn btn-secondary">
+            <i class="fab fa-github"></i> Code
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials-section">
+  <h2 class="section-title">What Clients Say</h2>
+  
+  <div class="testimonials-grid">
+    <div class="testimonial-card">
+      <p class="testimonial-text">
+        "Abhishek delivered our Hicar app 40% ahead of schedule with exceptional quality. 
+        The real-time tracking and payment integration work flawlessly. Highly recommended!"
+      </p>
+      <div class="testimonial-author">
+        <div class="author-avatar">RS</div>
+        <div class="author-info">
+          <h4>Rahul Sharma</h4>
+          <div class="author-role">CEO, Hicar Technologies</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="testimonial-card">
+      <p class="testimonial-text">
+        "SmartBill AI transformed our accounting process. The OCR accuracy and 
+        GST compliance features saved us 20+ hours weekly. Outstanding work!"
+      </p>
+      <div class="testimonial-author">
+        <div class="author-avatar">PK</div>
+        <div class="author-info">
+          <h4>Priya Kapoor</h4>
+          <div class="author-role">CFO, Excel Fintech</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="testimonial-card">
+      <p class="testimonial-text">
+        "Excellence E-Learning platform exceeded expectations. The video streaming 
+        and certification system is production-ready. 5-star service!"
+      </p>
+      <div class="testimonial-author">
+        <div class="author-avatar">AM</div>
+        <div class="author-info">
+          <h4>Anil Mehra</h4>
+          <div class="author-role">Founder, Excellence Academy</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+class WorkDashboard {
+  constructor() {
+    this.initHeader();
+    this.initMobileMenu();
+    this.initAnimations();
+  }
+
+  initHeader() {
+    const header = document.getElementById('header');
+    let ticking = false;
+    const updateHeader = () => {
+      if (window.scrollY > 100) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+      ticking = false;
+    };
+    window.addEventListener('scroll', () => {
+      if (!ticking) {
+        requestAnimationFrame(updateHeader);
+        ticking = true;
+      }
+    }, { passive: true });
+  }
+
+  initMobileMenu() {
+    const hamburger = document.getElementById('hamburger');
+    const nav = document.getElementById('nav');
+    
+    hamburger.addEventListener('click', (e) => {
+      e.stopPropagation();
+      hamburger.classList.toggle('active');
+      nav.classList.toggle('active');
+      document.body.style.overflow = hamburger.classList.contains('active') ? 'hidden' : '';
+    });
+
+    document.addEventListener('click', () => {
+      hamburger.classList.remove('active');
+      nav.classList.remove('active');
+      document.body.style.overflow = '';
+    });
+  }
+
+  initAnimations() {
+    const observerOptions = {
+      threshold: 0.15,
+      rootMargin: '0px 0px -100px 0px'
+    };
+
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry, index) => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0) scale(1)';
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.stat-item, .project-card, .testimonial-card').forEach((el, index) => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(60px) scale(0.95)';
+      el.style.transition = `all 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) ${index * 0.1}s`;
+      revealObserver.observe(el);
+    });
+  }
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', () => new WorkDashboard());
+} else {
+  new WorkDashboard();
+}
+</script>
+
+</body>
+</html>

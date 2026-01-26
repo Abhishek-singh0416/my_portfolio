@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Abhishek Singh | Data Scientist & Founder - Crystallite Infotech, Gurugram</title>
+<meta name="description" content="Abhishek Singh - Data Scientist, Flutter Developer, Founder of Crystallite Infotech in Gurugram, Haryana. BTech graduate with experience at OLX Autos, IBM, Anudip Foundation. Expertise in ML, Data Analytics, Flutter apps. Contact: abhishek.singh.ds21@gmail.com | Naharpur Rupa, Gurugram 122001">
+<meta name="keywords" content="Abhishek Singh Gurugram, Abhishek Singh Crystallite Infotech, Data Scientist Gurugram, Flutter Developer Haryana, Data Analytics Gurugram, OLX Autos MIS Executive">
+<meta name="author" content="Abhishek Singh">
+<meta property="og:title" content="About Abhishek Singh | Data Scientist & Crystallite Infotech Founder">
+<meta property="og:description" content="BTech graduate from Gurugram. Founder Crystallite Infotech. Ex-OLX Autos MIS Executive. IBM & Anudip Foundation Data Science intern. 10+ ML & Flutter projects.">
+<meta property="og:type" content="profile">
+<meta property="og:url" content="https://crystallite.in/about.html">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="canonical" href="https://crystallite.in/about.html">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<style>
+:root {
+  --bg-primary: #f8fafc;
+  --bg-secondary: #f1f5f9;
+  --surface: rgba(255,255,255,0.8);
+  --surface-glass: rgba(255,255,255,0.92);
+  --text-primary: #1e293b;
+  --text-secondary: #64748b;
+  --accent-primary: #3b82f6;
+  --accent-secondary: #8b5cf6;
+  --accent-glow: rgba(59,130,246,0.25);
+  --gradient-main: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 50%, #06b6d4 100%);
+  --gradient-neon: linear-gradient(45deg, #3b82f6, #60a5fa, #8b5cf6, #ec4899);
+  --gradient-bg: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 50%, #f1f5f9 100%);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--gradient-bg);
+  color: var(--text-primary);
+  line-height: 1.7;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Background floating elements */
+.background-elements {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.element {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.04;
+  animation: floatGentle 20s ease-in-out infinite;
+}
+
+.element-1 { width: 200px; height: 200px; top: 20%; left: 10%; background: var(--gradient-main); animation-delay: 0s; }
+.element-2 { width: 300px; height: 300px; bottom: 20%; right: 10%; background: var(--gradient-neon); animation-delay: -8s; }
+.element-3 { width: 150px; height: 150px; top: 70%; right: 15%; background: var(--accent-primary); animation-delay: -4s; }
+
+@keyframes floatGentle {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-12px) rotate(3deg); }
+}
+
+/* Header */
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 10000;
+  background: rgba(255,255,255,0.97);
+  backdrop-filter: blur(30px);
+  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.header-content {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 24px 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header.scrolled {
+  background: rgba(255,255,255,0.99);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+  padding: 18px 0;
+}
+
+.logo-text {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 800;
+  background: var(--gradient-main);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+nav a {
+  color: var(--text-primary);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  margin-left: 48px;
+  position: relative;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+nav a::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background: var(--gradient-main);
+  border-radius: 2px;
+  transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+nav a:hover { color: var(--accent-primary); }
+nav a:hover::after { width: 100%; }
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 6px;
+  cursor: pointer;
+  padding: 8px;
+}
+
+.hamburger span {
+  width: 28px;
+  height: 4px;
+  background: var(--text-primary);
+  border-radius: 3px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-origin: center;
+}
+
+.hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(6px, 6px); }
+.hamburger.active span:nth-child(2) { opacity: 0; transform: scale(0); }
+.hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(8px, -7px); }
+
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 100%;
+  max-width: 320px;
+  height: 100vh;
+  background: rgba(255,255,255,0.98);
+  backdrop-filter: blur(40px);
+  transition: right 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  z-index: 9999;
+  padding: 120px 40px 40px;
+  box-shadow: -8px 0 32px rgba(0,0,0,0.12);
+}
+
+.mobile-menu.active { right: 0; }
+
+.mobile-nav a {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  display: block;
+  padding: 20px 0;
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+  transition: all 0.4s ease;
+}
+
+.mobile-nav a:hover {
+  color: var(--accent-primary);
+  padding-left: 24px;
+  transform: translateX(8px);
+}
+
+/* Animations */
+@keyframes fadeInUp { 
+  from { opacity: 0; transform: translateY(50px); } 
+  to { opacity: 1; transform: translateY(0); } 
+}
+@keyframes fadeInLeft { 
+  from { opacity: 0; transform: translateX(-50px); } 
+  to { opacity: 1; transform: translateX(0); } 
+}
+@keyframes subtleGlow {
+  0%, 100% { box-shadow: 0 8px 32px var(--accent-glow); }
+  50% { box-shadow: 0 16px 48px var(--accent-glow); }
+}
+
+/* Hero Section */
+.about-hero {
+  min-height: 100vh;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 180px 5% 120px;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 120px;
+  align-items: center;
+  position: relative;
+}
+
+.hero-content h1 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(4rem, 9vw, 6.5rem);
+  font-weight: 900;
+  background: var(--gradient-main);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 32px;
+  line-height: 1.05;
+  animation: subtleGlow 4s ease-in-out infinite alternate;
+}
+
+.intro-text {
+  font-size: 1.4rem;
+  color: var(--text-secondary);
+  margin-bottom: 48px;
+  line-height: 1.85;
+  max-width: 600px;
+}
+
+.contact-card {
+  background: rgba(255,255,255,0.92);
+  backdrop-filter: blur(30px);
+  border-radius: 28px;
+  padding: 48px;
+  border: 1px solid rgba(255,255,255,0.2);
+  box-shadow: 0 32px 80px rgba(0,0,0,0.12);
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--gradient-main);
+}
+
+.contact-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 2rem;
+  color: var(--text-primary);
+  margin-bottom: 32px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 20px 0;
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+  transition: all 0.3s ease;
+}
+
+.contact-item:hover {
+  transform: translateX(8px);
+  background: rgba(59,130,246,0.05);
+  padding-left: 16px;
+  border-radius: 12px;
+}
+
+.contact-item:last-child { border-bottom: none; }
+
+.contact-icon {
+  width: 56px;
+  height: 56px;
+  background: var(--gradient-main);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.3rem;
+  flex-shrink: 0;
+  box-shadow: 0 8px 24px rgba(59,130,246,0.3);
+}
+
+.about-photo {
+  position: relative;
+  height: 650px;
+}
+
+.about-image {
+  width: 100%;
+  height: 100%;
+  border-radius: 36px;
+  object-fit: cover;
+  box-shadow: 
+    0 48px 96px rgba(0,0,0,0.18),
+    0 0 48px rgba(59,130,246,0.15);
+  transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transform-style: preserve-3d;
+}
+
+.about-image:hover {
+  transform: rotateY(5deg) rotateX(3deg) scale(1.03);
+  box-shadow: 
+    0 64px 128px rgba(0,0,0,0.22),
+    0 0 64px rgba(59,130,246,0.25);
+}
+
+/* Experience Section */
+.experience-section {
+  padding: 160px 5%;
+  max-width: 1400px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 100px;
+}
+
+.section-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(3rem, 7vw, 4.5rem);
+  font-weight: 900;
+  background: var(--gradient-main);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 24px;
+  position: relative;
+}
+
+.section-title::after {
+  content: '';
+  display: block;
+  width: 100px;
+  height: 4px;
+  background: var(--gradient-neon);
+  margin: 20px auto 0;
+  border-radius: 3px;
+}
+
+.section-subtitle {
+  font-size: 1.3rem;
+  color: var(--text-secondary);
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.8;
+}
+
+.modern-timeline {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.modern-timeline::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: linear-gradient(to bottom, var(--gradient-main));
+  transform: translateX(-50%);
+  border-radius: 2px;
+}
+
+.timeline-item {
+  margin-bottom: 80px;
+  position: relative;
+  opacity: 0;
+  transform: translateY(60px);
+  transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.timeline-item.animate { opacity: 1; transform: translateY(0); }
+
+.timeline-content {
+  width: 46%;
+  background: rgba(255,255,255,0.95);
+  backdrop-filter: blur(30px);
+  padding: 48px;
+  border-radius: 28px;
+  box-shadow: 
+    0 32px 80px rgba(0,0,0,0.12),
+    inset 0 1px 0 rgba(255,255,255,0.6);
+  border: 1px solid rgba(255,255,255,0.3);
+  position: relative;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+}
+
+.timeline-content::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 6px;
+  background: var(--gradient-main);
+}
+
+.timeline-content:hover {
+  transform: translateY(-16px) scale(1.02);
+  box-shadow: 
+    0 48px 120px rgba(59,130,246,0.25),
+    0 0 64px rgba(59,130,246,0.15);
+}
+
+.timeline-content.left { margin-right: 56%; margin-left: auto; }
+.timeline-content.right { margin-left: 56%; margin-right: auto; }
+
+.role-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--gradient-main);
+  color: white;
+  padding: 12px 24px;
+  border-radius: 50px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  margin-bottom: 24px;
+  box-shadow: 0 8px 24px rgba(59,130,246,0.3);
+}
+
+.role-badge i { font-size: 1.1rem; }
+
+.timeline-content h3 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.8rem;
+  color: var(--text-primary);
+  margin-bottom: 16px;
+  line-height: 1.3;
+}
+
+.timeline-content h4 {
+  color: var(--accent-primary);
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+  letter-spacing: 0.5px;
+}
+
+.timeline-content p {
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+  line-height: 1.75;
+}
+
+/* Skills Section */
+.skills-section {
+  padding: 160px 5%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.skills-grid {
+  background: rgba(255,255,255,0.7);
+  backdrop-filter: blur(30px);
+  border-radius: 40px;
+  padding: 80px;
+  margin-top: 100px;
+  border: 1px solid rgba(255,255,255,0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.skills-grid::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -20%;
+  width: 400px;
+  height: 400px;
+  background: var(--gradient-neon);
+  border-radius: 50%;
+  opacity: 0.05;
+  animation: subtleGlow 6s ease-in-out infinite alternate;
+}
+
+.skills-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(2.8rem, 6vw, 4rem);
+  text-align: center;
+  margin-bottom: 80px;
+  background: var(--gradient-main);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.skills-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  gap: 48px;
+}
+
+.skill-group {
+  background: rgba(255,255,255,0.95);
+  backdrop-filter: blur(30px);
+  padding: 56px;
+  border-radius: 32px;
+  border: 1px solid rgba(255,255,255,0.4);
+  box-shadow: 0 32px 80px rgba(0,0,0,0.1);
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.skill-group:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 48px 120px rgba(59,130,246,0.2);
+}
+
+.skill-group::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--gradient-neon);
+}
+
+.skill-group h3 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.9rem;
+  margin-bottom: 32px;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 48px;
+}
+
+.skill-tag {
+  background: var(--gradient-neon);
+  color: white;
+  padding: 12px 28px;
+  border-radius: 30px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.skill-tag:hover {
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 16px 40px rgba(59,130,246,0.4);
+}
+
+.cta-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 20px 48px;
+  background: var(--gradient-main);
+  color: white;
+  text-decoration: none;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 16px 48px rgba(59,130,246,0.3);
+}
+
+.cta-button:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 32px 80px rgba(59,130,246,0.4);
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+  .about-hero { grid-template-columns: 1fr; text-align: center; gap: 80px; padding: 160px 5% 100px; }
+  .modern-timeline::before { left: 28px; }
+  .timeline-content { width: 100%; margin: 0 0 0 72px !important; }
+  .timeline-content.left, .timeline-content.right { margin-left: 72px !important; margin-right: 0 !important; }
+}
+
+@media (max-width: 768px) {
+  .hamburger { display: flex; }
+  nav { display: none; }
+  .about-hero, .experience-section, .skills-section { padding-left: 5% !important; padding-right: 5% !important; }
+  .skills-grid { padding: 60px 40px; margin-top: 80px; border-radius: 24px; }
+  .skill-group { padding: 40px 32px; }
+  .contact-card { padding: 32px 24px; }
+}
+
+@media (max-width: 480px) {
+  .timeline-content { padding: 32px 24px; margin-left: 56px !important; }
+  .modern-timeline::before { left: 20px; }
+}
+</style>
+</head>
+
+<body>
+<!-- BACKGROUND ELEMENTS -->
+<div class="background-elements">
+  <div class="element element-1"></div>
+  <div class="element element-2"></div>
+  <div class="element element-3"></div>
+</div>
+
+<!-- UPGRADED HEADER -->
+<header id="header">
+  <div class="header-content">
+    <div class="logo-text">Abhishek Singh</div>
+    
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="#experience">Experience</a>
+      <a href="#skills">Skills</a>
+      <a href="projects.html">Projects</a>
+    </nav>
+    
+    <div class="hamburger" id="hamburger">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+  
+  <div class="mobile-menu" id="mobileMenu">
+    <div class="mobile-nav">
+      <a href="index.html">Home</a>
+      <a href="#experience">Experience</a>
+      <a href="#skills">Skills</a>
+      <a href="projects.html">Projects</a>
+    </div>
+  </div>
+</header>
+
+<!-- UPGRADED HERO -->
+<section class="about-hero">
+  <div>
+    <h1 data-animate="fadeInUp">Abhishek Singh</h1>
+    <p class="intro-text" data-animate="fadeInUp">
+      BTech Data Science graduate from Gurugram. <strong>Founder of Crystallite Infotech</strong> since June 2025. 
+      Previously MIS Executive at OLX Autos and Data Science intern at IBM & Anudip Foundation. 
+      Building scalable ML solutions and Flutter applications.
+    </p>
+    
+    <div class="contact-card" data-animate="fadeInUp">
+      <h3 class="contact-title">
+        <i class="fas fa-address-book"></i>
+        Get In Touch
+      </h3>
+      <div class="contact-item">
+        <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+        <div>abhishek.singh.ds21@gmail.com</div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon"><i class="fas fa-phone"></i></div>
+        <div>+91 76694 86641</div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon"><i class="fas fa-map-pin"></i></div>
+        <div>Naharpur Rupa, Near Holy Ground, Sector 23, Gurugram, Haryana 122001</div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="about-photo">
+    <img src="photo.png" alt="Abhishek Singh - Data Scientist & Founder Crystallite Infotech Gurugram" class="about-image">
+  </div>
+</section>
+
+<!-- UPGRADED EXPERIENCE TIMELINE -->
+<section id="experience" class="experience-section">
+  <div class="section-header">
+    <h2 class="section-title" data-animate="fadeInUp">Professional Journey</h2>
+    <p class="section-subtitle" data-animate="fadeInUp">From corporate MIS to founding my own tech company</p>
+  </div>
+  
+  <div class="modern-timeline">
+    <!-- Crystallite Infotech -->
+    <div class="timeline-item">
+      <div class="timeline-content right">
+        <div class="role-badge">
+          <i class="fas fa-crown"></i>
+          Founder & Lead Developer
+        </div>
+        <h3>Crystallite Infotech</h3>
+        <h4>June 2025 - Present</h4>
+        <p>After completing BTech, founded Crystallite Infotech to deliver enterprise-grade data solutions and Flutter mobile applications for modern businesses.</p>
+      </div>
+    </div>
+    
+    <!-- Anudip Foundation -->
+    <div class="timeline-item">
+      <div class="timeline-content left">
+        <div class="role-badge">
+          <i class="fas fa-chart-bar"></i>
+          Data Analytics Intern
+        </div>
+        <h3>Anudip Foundation</h3>
+        <h4>June 2024 - August 2024 (2 Months)</h4>
+        <p>Data analytics and visualization projects focused on social impact initiatives and business intelligence.</p>
+      </div>
+    </div>
+    
+    <!-- IBM -->
+    <div class="timeline-item">
+      <div class="timeline-content right">
+        <div class="role-badge">
+          <i class="fas fa-brain"></i>
+          Data Science Intern
+        </div>
+        <h3>IBM (Summer Internship)</h3>
+        <h4>June 2023 (1 Month)</h4>
+        <p>Hands-on experience with Python, machine learning models, and data science fundamentals through online training program.</p>
+      </div>
+    </div>
+    
+    <!-- OLX Autos -->
+    <div class="timeline-item">
+      <div class="timeline-content left">
+        <div class="role-badge">
+          <i class="fas fa-database"></i>
+          MIS Executive (Internship)
+        </div>
+        <h3>OLX Autos</h3>
+        <h4>Aug 31, 2021 - Sep 30, 2022</h4>
+        <p>Data management, MIS reporting, and business intelligence for India's leading automotive marketplace platform.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- UPGRADED SKILLS SECTION -->
+<section id="skills" class="skills-section">
+  <div class="skills-grid">
+    <h2 class="skills-title" data-animate="fadeInUp">Expertise & Portfolio</h2>
+    
+    <div class="skills-container">
+      <!-- Data Science -->
+      <div class="skill-group" data-animate="fadeInLeft">
+        <h3><i class="fas fa-chart-line"></i> Data Science & ML</h3>
+        <div class="skill-tags">
+          <span class="skill-tag">Play Store App Analysis</span>
+          <span class="skill-tag">Netflix Recommendation</span>
+          <span class="skill-tag">Bike Sharing Prediction</span>
+          <span class="skill-tag">Airbnb Booking Analysis</span>
+          <span class="skill-tag">Movie/TV Recommender</span>
+        </div>
+        <a href="projects.html#data-analytics" class="cta-button">
+          <i class="fas fa-arrow-right"></i>
+          Explore Data Projects
+        </a>
+      </div>
+      
+      <!-- Mobile Apps -->
+      <div class="skill-group" data-animate="fadeInUp">
+        <h3><i class="fab fa-flutter"></i> Flutter Applications</h3>
+        <div class="skill-tags">
+          <span class="skill-tag">Excellence (Udemy-like)</span>
+          <span class="skill-tag">SmartBill (AI Billing)</span>
+          <span class="skill-tag">Let's Drive (Driver Booking)</span>
+          <span class="skill-tag">Hicar (Carpooling)</span>
+        </div>
+        <a href="projects.html#mobile-apps" class="cta-button">
+          <i class="fas fa-arrow-right"></i>
+          View Mobile Apps
+        </a>
+      </div>
+      
+      <!-- Core Skills -->
+      <div class="skill-group" data-animate="fadeInRight">
+        <h3><i class="fas fa-rocket"></i> Core Technologies</h3>
+        <div class="skill-tags">
+          <span class="skill-tag">Flutter • Dart • Firebase</span>
+          <span class="skill-tag">Machine Learning</span>
+          <span class="skill-tag">Deep Learning • LLMs</span>
+          <span class="skill-tag">Power BI • Excel</span>
+          <span class="skill-tag">Google Cloud Platform</span>
+          <span class="skill-tag">SEO • Deployment</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+class EnhancedAboutPage {
+  constructor() {
+    this.initScrollEffects();
+    this.initMobileMenu();
+    this.initScrollAnimations();
+    this.initTimelineAnimation();
+  }
+
+  initScrollEffects() {
+    let ticking = false;
+    const header = document.getElementById('header');
+    const updateHeader = () => {
+      header.classList.toggle('scrolled', window.scrollY > 80);
+      ticking = false;
+    };
+    window.addEventListener('scroll', () => {
+      if (!ticking) {
+        requestAnimationFrame(updateHeader);
+        ticking = true;
+      }
+    }, { passive: true });
+  }
+
+  initMobileMenu() {
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('active');
+      mobileMenu.classList.toggle('active');
+      document.body.style.overflow = hamburger.classList.contains('active') ? 'hidden' : '';
+    });
+  }
+
+  initScrollAnimations() {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0) translateX(0)';
+        }
+      });
+    }, { threshold: 0.15, rootMargin: '0px 0px -100px 0px' });
+
+    document.querySelectorAll('[data-animate]').forEach(el => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(60px)';
+      el.style.transition = 'all 1s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+      observer.observe(el);
+    });
+  }
+
+  initTimelineAnimation() {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, index) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => {
+            entry.target.classList.add('animate');
+          }, index * 200);
+        }
+      });
+    }, { threshold: 0.2 });
+
+    document.querySelectorAll('.timeline-item').forEach(item => {
+      observer.observe(item);
+    });
+  }
+}
+
+window.addEventListener('load', () => new EnhancedAboutPage());
+
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', (e) => {
+    e.preventDefault();
+    const target = document.querySelector(anchor.getAttribute('href'));
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  });
+});
+</script>
+
+</body>
+</html>

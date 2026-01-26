@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact - Abhishek Singh | Data Science, Flutter & Web | Crystallite Infotech</title>
+<meta name="description" content="Contact Abhishek Singh - Data Scientist, Flutter Developer, Crystallite Infotech. Email, Phone, LinkedIn, GitHub, Instagram. Gurugram, Haryana.">
+<meta name="keywords" content="Abhishek Singh contact, Crystallite Infotech contact, Flutter developer Gurugram, data science contact">
+<meta name="author" content="Abhishek Singh">
+<meta property="og:title" content="Contact Abhishek Singh | Crystallite Infotech">
+<meta property="og:description" content="Get in touch for Flutter apps, Data Science projects, Web development. abhishek.singh.ds21@gmail.com | +91 7669486641">
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<style>
+:root {
+  --bg-primary: #0a0a0f;
+  --surface: rgba(15, 15, 25, 0.95);
+  --glass: rgba(20, 20, 35, 0.85);
+  --text-primary: #ffffff;
+  --text-secondary: #a0a0c0;
+  --accent: #00d4ff;
+  --accent-2: #7c3aed;
+  --accent-3: #00ff88;
+  --gradient-main: linear-gradient(135deg, #00d4ff 0%, #7c3aed 50%, #00ff88 100%);
+  --gradient-gold: linear-gradient(135deg, #ffd700 0%, #ffed4e 50%, #ffb347 100%);
+  --gradient-glass: linear-gradient(135deg, rgba(0, 212, 255, 0.1) 0%, rgba(124, 58, 237, 0.1) 100%);
+  --shadow: 0 35px 120px rgba(0, 0, 0, 0.6);
+  --shadow-hover: 0 60px 200px rgba(0, 212, 255, 0.4);
+  --border-glow: 0 0 0 1px rgba(0, 212, 255, 0.5);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { 
+  scroll-behavior: smooth; 
+  overflow-x: hidden; 
+  scroll-padding-top: 120px;
+}
+
+body { 
+  font-family: 'Inter', sans-serif; 
+  background: radial-gradient(ellipse at top, #0a0a0f 0%, #000000 70%);
+  color: var(--text-primary);
+  line-height: 1.7;
+  min-height: 100vh;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(circle at 20% 10%, rgba(0, 212, 255, 0.3) 0%, transparent 50%),
+    radial-gradient(circle at 80% 90%, rgba(124, 58, 237, 0.25) 0%, transparent 50%),
+    radial-gradient(circle at 10% 80%, rgba(0, 255, 136, 0.2) 0%, transparent 50%);
+  z-index: -1;
+  animation: bgFloat 20s ease-in-out infinite;
+}
+
+@keyframes bgFloat {
+  0%, 100% { transform: scale(1) rotate(0deg); }
+  50% { transform: scale(1.05) rotate(0.5deg); }
+}
+
+/* HEADER */
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 10000;
+  background: rgba(10, 10, 15, 0.98);
+  backdrop-filter: blur(50px) saturate(180%);
+  border-bottom: 1px solid rgba(0, 212, 255, 0.3);
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.header-content {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 20px 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header.scrolled { 
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(0, 212, 255, 0.5);
+  box-shadow: var(--shadow);
+}
+
+.logo {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(1.8rem, 3.5vw, 2.4rem);
+  font-weight: 900;
+  background: var(--gradient-main);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+nav a {
+  color: var(--text-primary);
+  text-decoration: none;
+  font-weight: 600;
+  margin-left: 48px;
+  position: relative;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  font-size: 1.1rem;
+}
+
+nav a::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background: var(--gradient-gold);
+  border-radius: 2px;
+  transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+nav a:hover, nav a.active { 
+  color: var(--accent);
+  transform: translateY(-3px);
+  text-shadow: 0 0 20px rgba(0, 212, 255, 0.6);
+}
+
+nav a:hover::after, nav a.active::after { width: 100%; }
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 6px;
+  cursor: pointer;
+  padding: 8px;
+}
+
+.hamburger span {
+  width: 32px;
+  height: 4px;
+  background: var(--gradient-main);
+  border-radius: 3px;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 2px 10px rgba(0, 212, 255, 0.4);
+}
+
+.hamburger.active span:nth-child(1) { 
+  transform: rotate(45deg) translate(8px, 8px); 
+}
+.hamburger.active span:nth-child(2) { 
+  opacity: 0; 
+}
+.hamburger.active span:nth-child(3) { 
+  transform: rotate(-45deg) translate(8px, -8px); 
+}
+
+/* HERO SECTION */
+.contact-hero {
+  min-height: 100vh;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 220px 5% 120px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 80px;
+  align-items: center;
+  text-align: center;
+}
+
+.hero-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(6rem, 14vw, 10rem);
+  font-weight: 900;
+  background: var(--gradient-main);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 24px;
+  animation: titleGlow 4s ease-in-out infinite alternate;
+  text-shadow: 0 0 60px rgba(0, 212, 255, 0.6);
+}
+
+@keyframes titleGlow {
+  0% { filter: drop-shadow(0 0 30px rgba(0, 212, 255, 0.5)); }
+  100% { filter: drop-shadow(0 0 60px rgba(0, 212, 255, 0.9)); }
+}
+
+.hero-subtitle {
+  font-size: clamp(1.6rem, 4.5vw, 2.2rem);
+  color: var(--text-secondary);
+  max-width: 800px;
+  margin: 0 auto 40px;
+  line-height: 1.8;
+}
+
+/* CONTACT CARDS SECTION */
+.contact-cards {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 5%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 40px;
+  margin-bottom: 120px;
+}
+
+.contact-card {
+  background: var(--glass);
+  backdrop-filter: blur(70px) saturate(180%);
+  border-radius: 36px;
+  padding: 60px 48px;
+  text-align: center;
+  border: 1px solid rgba(0, 212, 255, 0.3);
+  transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 6px;
+  background: var(--gradient-gold);
+  transform: scaleX(0);
+  transition: transform 0.8s ease;
+}
+
+.contact-card:hover::before {
+  transform: scaleX(1);
+}
+
+.contact-card:hover {
+  transform: translateY(-30px) scale(1.05);
+  box-shadow: var(--shadow-hover);
+  border-color: rgba(0, 212, 255, 0.7);
+}
+
+.contact-icon {
+  width: 120px;
+  height: 120px;
+  margin: 0 auto 32px;
+  background: var(--gradient-main);
+  border-radius: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3.5rem;
+  color: white;
+  box-shadow: 0 25px 80px rgba(0, 212, 255, 0.4);
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+}
+
+.contact-card:hover .contact-icon {
+  transform: scale(1.15) rotate(10deg);
+  box-shadow: 0 40px 120px rgba(0, 212, 255, 0.6);
+}
+
+.contact-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 800;
+  margin-bottom: 16px;
+  background: var(--gradient-gold);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.contact-detail {
+  font-size: 1.3rem;
+  color: var(--text-secondary);
+  margin-bottom: 24px;
+  font-weight: 500;
+}
+
+.contact-link {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.4s ease;
+  display: block;
+}
+
+.contact-link:hover {
+  color: var(--accent-3);
+  text-shadow: 0 0 20px rgba(0, 255, 136, 0.6);
+}
+
+/* ICON LINKS */
+.icon-links {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  margin: 60px 0;
+  flex-wrap: wrap;
+}
+
+.icon-link {
+  width: 80px;
+  height: 80px;
+  background: var(--glass);
+  backdrop-filter: blur(50px);
+  border-radius: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-primary);
+  font-size: 1.8rem;
+  text-decoration: none;
+  border: 2px solid rgba(0, 212, 255, 0.3);
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.icon-link::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--gradient-main);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.icon-link:hover::before {
+  opacity: 1;
+}
+
+.icon-link:hover {
+  transform: translateY(-12px) scale(1.1);
+  color: #0a0a0f;
+  box-shadow: 0 35px 100px rgba(0, 212, 255, 0.5);
+  border-color: rgba(0, 212, 255, 0.8);
+}
+
+/* CONTACT FORM */
+.contact-form-section {
+  max-width: 800px;
+  margin: 0 auto 120px;
+  padding: 120px 5%;
+}
+
+.form-card {
+  background: var(--glass);
+  backdrop-filter: blur(70px) saturate(180%);
+  border-radius: 40px;
+  padding: 64px 56px;
+  border: 1px solid rgba(0, 212, 255, 0.3);
+  box-shadow: var(--shadow);
+  position: relative;
+  overflow: hidden;
+}
+
+.form-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 8px;
+  background: var(--gradient-gold);
+}
+
+.form-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(2.2rem, 6vw, 3rem);
+  font-weight: 900;
+  text-align: center;
+  margin-bottom: 16px;
+  background: var(--gradient-main);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.form-subtitle {
+  text-align: center;
+  color: var(--text-secondary);
+  font-size: 1.2rem;
+  margin-bottom: 48px;
+}
+
+.form-group {
+  margin-bottom: 32px;
+  position: relative;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 20px 24px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 2px solid rgba(0, 212, 255, 0.3);
+  border-radius: 24px;
+  color: var(--text-primary);
+  font-size: 1.1rem;
+  font-family: 'Inter', sans-serif;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  backdrop-filter: blur(20px);
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: var(--text-secondary);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 4px rgba(0, 212, 255, 0.2);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 140px;
+  max-height: 200px;
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 20px;
+  background: var(--gradient-main);
+  color: white;
+  border: none;
+  border-radius: 28px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  font-family: 'Space Grotesk', sans-serif;
+  cursor: pointer;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 20px 60px rgba(0, 212, 255, 0.4);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.submit-btn:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 35px 100px rgba(0, 212, 255, 0.6);
+}
+
+.submit-btn:active {
+  transform: translateY(-2px) scale(1);
+}
+
+/* LOCATION */
+.location-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 120px 5%;
+  text-align: center;
+}
+
+.location-card {
+  background: var(--glass);
+  backdrop-filter: blur(60px);
+  border-radius: 32px;
+  padding: 64px 48px;
+  border: 1px solid rgba(0, 212, 255, 0.2);
+}
+
+.location-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 900;
+  margin-bottom: 24px;
+  background: var(--gradient-gold);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.location-detail {
+  font-size: 1.3rem;
+  color: var(--text-secondary);
+  margin-bottom: 16px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hamburger { display: flex; }
+  nav { 
+    position: fixed;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: var(--glass);
+    backdrop-filter: blur(50px);
+    flex-direction: column;
+    padding: 2rem;
+    gap: 2rem;
+    transform: translateY(-100%);
+    opacity: 0;
+    transition: all 0.5s ease;
+  }
+  nav.active {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  
+  .contact-hero { padding: 180px 5% 80px; grid-template-columns: 1fr; }
+  .contact-cards { grid-template-columns: 1fr; gap: 32px; }
+  .icon-links { gap: 20px; }
+  .icon-link { width: 70px; height: 70px; font-size: 1.6rem; }
+  .form-card { padding: 48px 32px; }
+}
+
+@media (max-width: 480px) {
+  .contact-card { padding: 48px 32px; }
+  .form-card { padding: 40px 24px; }
+  .location-card { padding: 48px 32px; }
+}
+</style>
+</head>
+
+<body>
+<!-- HEADER -->
+<header id="header">
+  <div class="header-content">
+    <div class="logo">Abhishek Singh</div>
+    
+    <nav id="nav">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="projects.html">Projects</a>
+      <a href="work.html">Work</a>
+      <a href="#contact" class="active">Contact</a>
+    </nav>
+    
+    <div class="hamburger" id="hamburger">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</header>
+
+<!-- HERO SECTION -->
+<section class="contact-hero">
+  <div>
+    <h1 class="hero-title">Get In Touch</h1>
+    <p class="hero-subtitle">
+      Ready to bring your ideas to life? Let's discuss your next Flutter app, 
+      Data Science project, or web application.
+    </p>
+  </div>
+</section>
+
+<!-- CONTACT CARDS -->
+<section class="contact-cards">
+  <div class="contact-card">
+    <div class="contact-icon">
+      <i class="fas fa-envelope"></i>
+    </div>
+    <div class="contact-title">Email</div>
+    <div class="contact-detail">abhishek.singh.ds21@gmail.com</div>
+    <a href="mailto:abhishek.singh.ds21@gmail.com" class="contact-link">
+      Send Message
+    </a>
+  </div>
+
+  <div class="contact-card">
+    <div class="contact-icon">
+      <i class="fas fa-phone"></i>
+    </div>
+    <div class="contact-title">Phone</div>
+    <div class="contact-detail">+91 76694 86641</div>
+    <a href="tel:7669486641" class="contact-link">
+      Call Now
+    </a>
+  </div>
+
+  <div class="contact-card">
+    <div class="contact-icon">
+      <i class="fas fa-map-marker-alt"></i>
+    </div>
+    <div class="contact-title">Location</div>
+    <div class="contact-detail">Gurugram, Haryana, India</div>
+    <div class="contact-detail" style="font-size: 1.1rem;">Crystallite Infotech</div>
+  </div>
+</section>
+
+<!-- SOCIAL ICONS -->
+<section style="text-align: center; padding: 0 5% 120px;">
+  <h2 style="
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(2.5rem, 6vw, 3.5rem);
+    font-weight: 900;
+    margin-bottom: 40px;
+    background: var(--gradient-gold);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  ">Let's Connect</h2>
+  
+  <div class="icon-links">
+    <a href="mailto:abhishek.singh.ds21@gmail.com" class="icon-link" title="Email" target="_blank">
+      <i class="fas fa-envelope"></i>
+    </a>
+    <a href="tel:7669486641" class="icon-link" title="Phone">
+      <i class="fas fa-phone"></i>
+    </a>
+    <a href="https://github.com/Abhishek-singh0416" target="_blank" class="icon-link" title="GitHub">
+      <i class="fab fa-github"></i>
+    </a>
+    <a href="https://www.linkedin.com/in/abhishek-singh-0b9bb4268/" target="_blank" class="icon-link" title="LinkedIn">
+      <i class="fab fa-linkedin-in"></i>
+    </a>
+    <a href="https://www.instagram.com/_abhii.19/" target="_blank" class="icon-link" title="Instagram">
+      <i class="fab fa-instagram"></i>
+    </a>
+  </div>
+</section>
+
+<!-- CONTACT FORM -->
+<section class="contact-form-section">
+  <div class="form-card">
+    <h3 class="form-title">Send a Message</h3>
+    <p class="form-subtitle">Have a project in mind? Drop me a line and I'll get back within 24 hours.</p>
+    
+    <form action="mailto:abhishek.singh.ds21@gmail.com" method="post" enctype="text/plain">
+      <div class="form-group">
+        <input type="text" name="name" placeholder="Your Name" required>
+      </div>
+      
+      <div class="form-group">
+        <input type="email" name="email" placeholder="Your Email" required>
+      </div>
+      
+      <div class="form-group">
+        <input type="text" name="subject" placeholder="Subject" required>
+      </div>
+      
+      <div class="form-group">
+        <textarea name="message" placeholder="Tell me about your project..." required></textarea>
+      </div>
+      
+      <button type="submit" class="submit-btn">
+        <i class="fas fa-paper-plane"></i> Send Message
+      </button>
+    </form>
+  </div>
+</section>
+
+<!-- LOCATION -->
+<section class="location-section">
+  <div class="location-card">
+    <h3 class="location-title">Based in Gurugram</h3>
+    <div class="location-detail">
+      Serving clients worldwide from Crystallite Infotech headquarters
+    </div>
+    <div class="location-detail">
+      Haryana, India • Available for remote & onsite projects
+    </div>
+  </div>
+</section>
+
+<script>
+class ContactDashboard {
+  constructor() {
+    this.initHeader();
+    this.initMobileMenu();
+    this.initAnimations();
+    this.initForm();
+  }
+
+  initHeader() {
+    const header = document.getElementById('header');
+    let ticking = false;
+    const updateHeader = () => {
+      if (window.scrollY > 100) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+      ticking = false;
+    };
+    window.addEventListener('scroll', () => {
+      if (!ticking) {
+        requestAnimationFrame(updateHeader);
+        ticking = true;
+      }
+    }, { passive: true });
+  }
+
+  initMobileMenu() {
+    const hamburger = document.getElementById('hamburger');
+    const nav = document.getElementById('nav');
+    
+    hamburger.addEventListener('click', (e) => {
+      e.stopPropagation();
+      hamburger.classList.toggle('active');
+      nav.classList.toggle('active');
+      document.body.style.overflow = hamburger.classList.contains('active') ? 'hidden' : '';
+    });
+
+    document.addEventListener('click', () => {
+      hamburger.classList.remove('active');
+      nav.classList.remove('active');
+      document.body.style.overflow = '';
+    });
+  }
+
+  initAnimations() {
+    const observerOptions = {
+      threshold: 0.15,
+      rootMargin: '0px 0px -100px 0px'
+    };
+
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry, index) => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0) scale(1)';
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.contact-card, .form-card, .location-card').forEach((el, index) => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(60px) scale(0.95)';
+      el.style.transition = `all 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) ${index * 0.15}s`;
+      revealObserver.observe(el);
+    });
+  }
+
+  initForm() {
+    const form = document.querySelector('form');
+    form.addEventListener('submit', (e) => {
+      // Add visual feedback
+      const btn = document.querySelector('.submit-btn');
+      btn.innerHTML = '<i class="fas fa-check"></i> Message Sent!';
+      btn.style.background = 'var(--gradient-gold)';
+      
+      setTimeout(() => {
+        btn.innerHTML = '<i class="fas fa-paper-plane"></i> Send Message';
+        btn.style.background = 'var(--gradient-main)';
+      }, 2000);
+    });
+  }
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', () => new ContactDashboard());
+} else {
+  new ContactDashboard();
+}
+</script>
+
+</body>
+</html>
