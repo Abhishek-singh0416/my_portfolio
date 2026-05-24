@@ -1,783 +1,1065 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Projects - Abhishek Singh | Data Science, Flutter & Web | Crystallite Infotech</title>
-<meta name="description" content="Abhishek Singh Projects: 15+ Data Science, Flutter Apps, Web Development. Play Store Analysis, Netflix Recommendation, Hicar App, SmartBill AI, Excellence E-Learning. Gurugram Developer.">
-<meta name="keywords" content="Abhishek Singh projects, data science Gurugram, Flutter developer Haryana, Hicar app, SmartBill AI, Crystallite Infotech projects">
-<meta name="author" content="Abhishek Singh">
-<meta property="og:title" content="Abhishek Singh | Data Science & Flutter Projects Portfolio">
-<meta property="og:description" content="15+ Projects: Data Analytics, ML Models, Flutter Apps (Hicar, SmartBill, Excellence), Web Development by Gurugram Data Scientist.">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Abhishek Singh | Project Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #0a0a0f;
+      --surface: #111118;
+      --surface2: #1a1a26;
+      --border: rgba(255,255,255,0.07);
+      --accent: #6c63ff;
+      --accent2: #ff6584;
+      --accent3: #43e97b;
+      --accent4: #f7971e;
+      --text: #e8e8f0;
+      --muted: #888899;
+      --white: #ffffff;
+    }
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-<style>
-:root {
-  --bg-primary: #0a0a0f;
-  --surface: rgba(15, 15, 25, 0.95);
-  --glass: rgba(20, 20, 35, 0.85);
-  --text-primary: #ffffff;
-  --text-secondary: #a0a0c0;
-  --accent: #00d4ff;
-  --accent-2: #7c3aed;
-  --accent-3: #00ff88;
-  --gradient-main: linear-gradient(135deg, #00d4ff 0%, #7c3aed 50%, #00ff88 100%);
-  --gradient-glass: linear-gradient(135deg, rgba(0, 212, 255, 0.1) 0%, rgba(124, 58, 237, 0.1) 100%);
-  --gradient-gold: linear-gradient(135deg, #ffd700 0%, #ffed4e 50%, #ffb347 100%);
-  --shadow: 0 35px 120px rgba(0, 0, 0, 0.6);
-  --shadow-hover: 0 60px 200px rgba(0, 212, 255, 0.4);
-  --border-glow: 0 0 0 1px rgba(0, 212, 255, 0.5);
-}
+    html { scroll-behavior: smooth; }
 
-* { 
-  margin: 0; 
-  padding: 0; 
-  box-sizing: border-box; 
-}
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
 
-html { 
-  scroll-behavior: smooth; 
-  overflow-x: hidden; 
-  scroll-padding-top: 120px;
-}
+    /* ── BACKGROUND MESH ── */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 80% 60% at 10% 10%, rgba(108,99,255,0.12) 0%, transparent 60%),
+        radial-gradient(ellipse 60% 50% at 90% 80%, rgba(255,101,132,0.08) 0%, transparent 60%),
+        radial-gradient(ellipse 50% 40% at 50% 50%, rgba(67,233,123,0.05) 0%, transparent 70%);
+      pointer-events: none;
+      z-index: 0;
+    }
 
-body { 
-  font-family: 'Inter', sans-serif; 
-  background: radial-gradient(ellipse at top, #0a0a0f 0%, #000000 70%);
-  color: var(--text-primary);
-  line-height: 1.7;
-  min-height: 100vh;
-  position: relative;
-}
+    /* ── HEADER ── */
+    header {
+      position: relative;
+      z-index: 10;
+      padding: 3.5rem 2rem 2.5rem;
+      text-align: center;
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(10px);
+      background: rgba(10,10,15,0.7);
+    }
 
-body::before {
-  content: '';
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: 
-    radial-gradient(circle at 20% 10%, rgba(0, 212, 255, 0.3) 0%, transparent 50%),
-    radial-gradient(circle at 80% 90%, rgba(124, 58, 237, 0.25) 0%, transparent 50%),
-    radial-gradient(circle at 10% 80%, rgba(0, 255, 136, 0.2) 0%, transparent 50%);
-  z-index: -1;
-  animation: bgFloat 20s ease-in-out infinite;
-}
+    .header-badge {
+      display: inline-block;
+      background: linear-gradient(135deg, rgba(108,99,255,0.2), rgba(255,101,132,0.15));
+      border: 1px solid rgba(108,99,255,0.35);
+      border-radius: 100px;
+      padding: 0.35rem 1.1rem;
+      font-size: 0.75rem;
+      font-family: 'Syne', sans-serif;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #a89fff;
+      margin-bottom: 1.2rem;
+    }
 
-@keyframes bgFloat {
-  0%, 100% { transform: scale(1) rotate(0deg); }
-  50% { transform: scale(1.05) rotate(0.5deg); }
-}
+    header h1 {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(2.2rem, 5vw, 3.8rem);
+      font-weight: 800;
+      background: linear-gradient(135deg, #ffffff 0%, #a89fff 50%, #ff6584 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+    }
 
-/* HEADER */
-header {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 10000;
-  background: rgba(10, 10, 15, 0.98);
-  backdrop-filter: blur(50px) saturate(180%);
-  border-bottom: 1px solid rgba(0, 212, 255, 0.3);
-  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-}
+    header p {
+      color: var(--muted);
+      font-size: 1.05rem;
+      margin-top: 0.6rem;
+      font-weight: 300;
+    }
 
-.header-content {
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 20px 5%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
+    nav {
+      margin-top: 1.8rem;
+      display: flex;
+      justify-content: center;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
 
-header.scrolled { 
-  padding: 12px 0;
-  border-bottom: 1px solid rgba(0, 212, 255, 0.5);
-  box-shadow: var(--shadow);
-}
+    nav a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      padding: 0.45rem 1.2rem;
+      border-radius: 100px;
+      border: 1px solid var(--border);
+      transition: all 0.25s;
+    }
 
-.logo {
-  font-family: 'Space Grotesk', sans-serif;
-  font-size: clamp(1.8rem, 3.5vw, 2.4rem);
-  font-weight: 900;
-  background: var(--gradient-main);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  text-shadow: 0 0 30px rgba(0, 212, 255, 0.5);
-  transition: all 0.4s ease;
-}
+    nav a:hover {
+      color: var(--white);
+      border-color: rgba(108,99,255,0.5);
+      background: rgba(108,99,255,0.1);
+    }
 
-nav a {
-  color: var(--text-primary);
-  text-decoration: none;
-  font-weight: 600;
-  margin-left: 48px;
-  position: relative;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  font-size: 1.1rem;
-}
+    /* ── STATS BAR ── */
+    .stats-bar {
+      position: relative;
+      z-index: 5;
+      display: flex;
+      justify-content: center;
+      gap: 3rem;
+      padding: 1.8rem 2rem;
+      border-bottom: 1px solid var(--border);
+      flex-wrap: wrap;
+    }
 
-nav a::after {
-  content: '';
-  position: absolute;
-  bottom: -8px;
-  left: 0;
-  width: 0;
-  height: 3px;
-  background: var(--gradient-gold);
-  border-radius: 2px;
-  transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-}
+    .stat {
+      text-align: center;
+    }
 
-nav a:hover { 
-  color: var(--accent);
-  transform: translateY(-3px);
-  text-shadow: 0 0 20px rgba(0, 212, 255, 0.6);
-}
+    .stat-num {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.9rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
 
-nav a:hover::after, nav a.active::after { width: 100%; }
+    .stat-label {
+      font-size: 0.78rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-top: 0.15rem;
+    }
 
-.hamburger {
-  display: none;
-  flex-direction: column;
-  gap: 6px;
-  cursor: pointer;
-  padding: 8px;
-}
+    /* ── FILTER PILLS ── */
+    .filter-bar {
+      position: relative;
+      z-index: 5;
+      display: flex;
+      justify-content: center;
+      gap: 0.6rem;
+      padding: 1.8rem 2rem 1rem;
+      flex-wrap: wrap;
+    }
 
-.hamburger span {
-  width: 32px;
-  height: 4px;
-  background: var(--gradient-main);
-  border-radius: 3px;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 0 2px 10px rgba(0, 212, 255, 0.4);
-}
+    .filter-pill {
+      cursor: pointer;
+      padding: 0.4rem 1.1rem;
+      border-radius: 100px;
+      border: 1px solid var(--border);
+      font-size: 0.82rem;
+      font-weight: 500;
+      color: var(--muted);
+      background: transparent;
+      transition: all 0.2s;
+      font-family: 'DM Sans', sans-serif;
+    }
 
-.hamburger.active span:nth-child(1) { 
-  transform: rotate(45deg) translate(8px, 8px); 
-}
-.hamburger.active span:nth-child(2) { 
-  opacity: 0; 
-}
-.hamburger.active span:nth-child(3) { 
-  transform: rotate(-45deg) translate(8px, -8px); 
-}
+    .filter-pill:hover, .filter-pill.active {
+      color: var(--white);
+      border-color: var(--accent);
+      background: rgba(108,99,255,0.15);
+    }
 
-/* DASHBOARD HERO */
-.dashboard-hero {
-  min-height: 100vh;
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 220px 5% 100px;
-  display: grid;
-  grid-template-rows: auto auto 1fr auto;
-  gap: 80px;
-  align-items: center;
-}
+    /* ── SECTION LABEL ── */
+    .section-label {
+      position: relative;
+      z-index: 5;
+      font-family: 'Syne', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--muted);
+      padding: 1.5rem 2.5rem 0.5rem;
+    }
 
-.hero-title {
-  font-family: 'Space Grotesk', sans-serif;
-  font-size: clamp(5.5rem, 13vw, 9rem);
-  font-weight: 900;
-  background: var(--gradient-main);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  text-align: center;
-  margin-bottom: 20px;
-  animation: titleGlow 4s ease-in-out infinite alternate;
-  text-shadow: 0 0 60px rgba(0, 212, 255, 0.6);
-}
+    .section-label span {
+      border-left: 3px solid var(--accent);
+      padding-left: 0.7rem;
+    }
 
-@keyframes titleGlow {
-  0% { 
-    filter: drop-shadow(0 0 30px rgba(0, 212, 255, 0.5)) brightness(1);
-    transform: scale(1);
-  }
-  100% { 
-    filter: drop-shadow(0 0 60px rgba(0, 212, 255, 0.9)) brightness(1.1);
-    transform: scale(1.02);
-  }
-}
+    /* ── PROJECT GRID ── */
+    .project-grid {
+      position: relative;
+      z-index: 5;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+      gap: 1.5rem;
+      padding: 1rem 2rem 2rem;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
 
-.hero-subtitle {
-  font-size: clamp(1.5rem, 4.5vw, 2.1rem);
-  text-align: center;
-  color: var(--text-secondary);
-  max-width: 900px;
-  margin: 0 auto;
-  line-height: 1.8;
-  font-weight: 400;
-  backdrop-filter: blur(20px);
-}
+    /* ── FEATURED (WIDE) CARDS ── */
+    .card-featured {
+      grid-column: span 2;
+    }
 
-/* STATS DASHBOARD */
-.stats-dashboard {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 40px;
-  margin: 60px 0;
-}
+    @media (max-width: 900px) {
+      .card-featured { grid-column: span 1; }
+    }
 
-.stat-card {
-  background: var(--glass);
-  backdrop-filter: blur(60px) saturate(180%);
-  border-radius: 32px;
-  padding: 60px 40px;
-  text-align: center;
-  border: 1px solid rgba(0, 212, 255, 0.3);
-  box-shadow: var(--shadow);
-  transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  position: relative;
-  overflow: hidden;
-}
+    /* ── CARD BASE ── */
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.3s cubic-bezier(.23,1,.32,1), box-shadow 0.3s, border-color 0.3s;
+      animation: fadeUp 0.5s ease both;
+    }
 
-.stat-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 6px;
-  background: var(--gradient-gold);
-  transform: scaleX(0);
-  transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-}
+    .card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(108,99,255,0.3);
+      box-shadow: 0 24px 60px rgba(0,0,0,0.5), 0 0 0 1px rgba(108,99,255,0.1);
+    }
 
-.stat-card:hover::before {
-  transform: scaleX(1);
-}
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
 
-.stat-card:hover {
-  transform: translateY(-30px) scale(1.05);
-  box-shadow: var(--shadow-hover);
-  border-color: rgba(0, 212, 255, 0.7);
-}
+    /* staggered delays */
+    .card:nth-child(1)  { animation-delay: 0.05s; }
+    .card:nth-child(2)  { animation-delay: 0.10s; }
+    .card:nth-child(3)  { animation-delay: 0.15s; }
+    .card:nth-child(4)  { animation-delay: 0.20s; }
+    .card:nth-child(5)  { animation-delay: 0.25s; }
+    .card:nth-child(6)  { animation-delay: 0.30s; }
+    .card:nth-child(7)  { animation-delay: 0.35s; }
+    .card:nth-child(8)  { animation-delay: 0.40s; }
+    .card:nth-child(9)  { animation-delay: 0.45s; }
+    .card:nth-child(10) { animation-delay: 0.50s; }
 
-.stat-image {
-  width: 120px;
-  height: 120px;
-  margin: 0 auto 32px;
-  background-size: cover;
-  background-position: center;
-  border-radius: 28px;
-  box-shadow: 0 25px 80px rgba(0, 0, 0, 0.5);
-  border: 2px solid rgba(255, 255, 255, 0.1);
-  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-  position: relative;
-}
+    /* ── CARD IMAGE AREA ── */
+    .card-img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.5s cubic-bezier(.23,1,.32,1);
+    }
 
-.stat-image::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: var(--gradient-main);
-  border-radius: 28px;
-  opacity: 0;
-  transition: opacity 0.6s ease;
-}
+    .card:hover .card-img { transform: scale(1.04); }
 
-.stat-card:hover .stat-image::after {
-  opacity: 0.3;
-}
+    .card-img-wrap {
+      overflow: hidden;
+      position: relative;
+    }
 
-.stat-card:hover .stat-image {
-  transform: scale(1.15) rotate(8deg);
-}
+    /* gradient overlay on images */
+    .card-img-wrap::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 60px;
+      background: linear-gradient(transparent, var(--surface));
+      pointer-events: none;
+    }
 
-.stat-number {
-  font-family: 'Space Grotesk', sans-serif;
-  font-size: clamp(3.5rem, 9vw, 6rem);
-  font-weight: 900;
-  background: var(--gradient-gold);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  margin-bottom: 20px;
-  text-shadow: 0 0 40px rgba(255, 215, 0, 0.6);
-}
+    /* coloured placeholder when no image */
+    .card-img-placeholder {
+      width: 100%;
+      height: 160px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3.5rem;
+      position: relative;
+      overflow: hidden;
+    }
 
-.stat-label {
-  font-size: 1.4rem;
-  color: var(--text-primary);
-  font-weight: 700;
-  letter-spacing: 0.5px;
-}
+    .card-img-placeholder::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      opacity: 0.18;
+    }
 
-/* SKILLS ROW */
-.skills-row {
-  display: flex;
-  gap: 24px;
-  margin: 60px 0;
-  overflow-x: auto;
-  padding: 28px 0;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-}
+    /* ── CARD BODY ── */
+    .card-body {
+      padding: 1.4rem 1.5rem 1.2rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 0.7rem;
+    }
 
-.skills-row::-webkit-scrollbar { display: none; }
+    .card-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
 
-.skill-tag {
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(30px);
-  color: var(--text-primary);
-  padding: 20px 40px;
-  border-radius: 50px;
-  font-weight: 700;
-  font-size: 1.1rem;
-  white-space: nowrap;
-  border: 2px solid rgba(0, 212, 255, 0.3);
-  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-  flex-shrink: 0;
-  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.3);
-  position: relative;
-  overflow: hidden;
-}
+    .tag {
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 0.25rem 0.65rem;
+      border-radius: 100px;
+      border: 1px solid;
+    }
 
-.skill-tag::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: var(--gradient-main);
-  opacity: 0;
-  transition: opacity 0.5s ease;
-}
+    .tag-ml    { color: #a89fff; border-color: rgba(108,99,255,0.4); background: rgba(108,99,255,0.1); }
+    .tag-nlp   { color: #7eceff; border-color: rgba(126,206,255,0.4); background: rgba(126,206,255,0.08); }
+    .tag-eda   { color: #43e97b; border-color: rgba(67,233,123,0.4); background: rgba(67,233,123,0.08); }
+    .tag-bi    { color: #f7971e; border-color: rgba(247,151,30,0.4); background: rgba(247,151,30,0.08); }
+    .tag-web   { color: #ff6584; border-color: rgba(255,101,132,0.4); background: rgba(255,101,132,0.08); }
+    .tag-govt  { color: #ffd166; border-color: rgba(255,209,102,0.4); background: rgba(255,209,102,0.08); }
+    .tag-dl    { color: #c77dff; border-color: rgba(199,125,255,0.4); background: rgba(199,125,255,0.08); }
+    .tag-pbi   { color: #f2994a; border-color: rgba(242,153,74,0.4); background: rgba(242,153,74,0.08); }
 
-.skill-tag:hover::before {
-  opacity: 1;
-}
+    .card-title {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.08rem;
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1.35;
+    }
 
-.skill-tag:hover {
-  color: #0a0a0f;
-  transform: translateY(-12px) scale(1.08);
-  border-color: rgba(0, 212, 255, 0.8);
-  box-shadow: 0 35px 120px rgba(0, 212, 255, 0.4);
-}
+    .card-desc {
+      font-size: 0.88rem;
+      color: var(--muted);
+      line-height: 1.65;
+      flex: 1;
+    }
 
-/* PROJECT CATEGORIES */
-.categories-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
-  gap: 60px;
-  margin-top: 80px;
-}
+    /* ── CARD FOOTER ── */
+    .card-footer {
+      padding: 0 1.5rem 1.3rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+    }
 
-.category-card {
-  height: 520px;
-  background: var(--glass);
-  backdrop-filter: blur(70px) saturate(180%);
-  border-radius: 40px;
-  padding: 0;
-  border: 1px solid rgba(0, 212, 255, 0.2);
-  box-shadow: var(--shadow);
-  transition: all 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  position: relative;
-  overflow: hidden;
-  cursor: pointer;
-  display: flex;
-  flex-direction: column;
-}
+    .card-meta {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
 
-.category-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 8px;
-  background: var(--gradient-gold);
-  transform: scaleX(0);
-  transition: transform 1s cubic-bezier(0.4, 0, 0.2, 1);
-}
+    .card-meta span {
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
 
-.category-card:hover::before {
-  transform: scaleX(1);
-}
+    .github-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      background: rgba(108,99,255,0.15);
+      border: 1px solid rgba(108,99,255,0.35);
+      color: #a89fff;
+      text-decoration: none;
+      padding: 0.45rem 1rem;
+      border-radius: 100px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      transition: all 0.2s;
+      white-space: nowrap;
+    }
 
-.category-card:hover {
-  transform: translateY(-40px) scale(1.04);
-  box-shadow: 0 100px 300px rgba(0, 212, 255, 0.5);
-  border-color: rgba(0, 212, 255, 0.6);
-}
+    .github-btn:hover {
+      background: rgba(108,99,255,0.3);
+      border-color: var(--accent);
+      color: var(--white);
+      transform: scale(1.03);
+    }
 
-.category-image {
-  height: 260px;
-  background-size: cover;
-  background-position: center;
-  position: relative;
-  transition: all 1s cubic-bezier(0.4, 0, 0.2, 1);
-  border-radius: 40px 40px 0 0;
-}
+    .github-btn svg { flex-shrink: 0; }
 
-.category-card:hover .category-image {
-  transform: scale(1.12);
-  filter: brightness(1.15) contrast(1.2) saturate(1.3);
-}
+    /* ── STAR BADGE ── */
+    .star-badge {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      background: linear-gradient(135deg, #f7971e, #ffd200);
+      color: #1a1000;
+      font-size: 0.68rem;
+      font-weight: 800;
+      font-family: 'Syne', sans-serif;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 0.3rem 0.75rem;
+      border-radius: 100px;
+      z-index: 2;
+    }
 
-.category-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: var(--gradient-main);
-  opacity: 0;
-  transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 40px 40px 0 0;
-}
+    /* ── REAL WORK BADGE ── */
+    .real-badge {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      background: linear-gradient(135deg, rgba(67,233,123,0.25), rgba(56,189,248,0.2));
+      border: 1px solid rgba(67,233,123,0.4);
+      color: #43e97b;
+      font-size: 0.65rem;
+      font-weight: 700;
+      font-family: 'Syne', sans-serif;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 0.28rem 0.7rem;
+      border-radius: 100px;
+      z-index: 2;
+    }
 
-.category-card:hover .category-overlay {
-  opacity: 0.95;
-}
+    /* ── DIVIDER ── */
+    .divider {
+      position: relative;
+      z-index: 5;
+      height: 1px;
+      background: var(--border);
+      margin: 2rem 2rem 0;
+    }
 
-.category-overlay i {
-  font-size: 5rem;
-  color: rgba(255, 255, 255, 0.95);
-  text-shadow: 0 0 40px rgba(255, 255, 255, 0.8);
-  filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.5));
-  animation: iconFloat 2s ease-in-out infinite;
-}
+    /* ── FOOTER ── */
+    footer {
+      position: relative;
+      z-index: 5;
+      text-align: center;
+      padding: 2rem;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 0.85rem;
+      margin-top: 2rem;
+    }
 
-@keyframes iconFloat {
-  0%, 100% { transform: translateY(0px) scale(1); }
-  50% { transform: translateY(-15px) scale(1.1); }
-}
+    footer a { color: #a89fff; text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
 
-.category-content {
-  padding: 56px 48px 48px;
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-}
-
-.category-title {
-  font-family: 'Space Grotesk', sans-serif;
-  font-size: clamp(2.2rem, 6vw, 3rem);
-  font-weight: 900;
-  margin-bottom: 24px;
-  background: var(--gradient-gold);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  text-shadow: 0 0 30px rgba(255, 215, 0, 0.5);
-}
-
-.category-description {
-  font-size: 1.25rem;
-  line-height: 1.8;
-  color: var(--text-secondary);
-  margin-bottom: auto;
-  backdrop-filter: blur(20px);
-}
-
-.category-count {
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(30px);
-  color: var(--text-primary);
-  padding: 20px 40px;
-  border-radius: 40px;
-  font-weight: 900;
-  font-size: 1.3rem;
-  border: 2px solid rgba(0, 212, 255, 0.4);
-  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
-}
-
-.category-card:hover .category-count {
-  background: var(--gradient-gold);
-  color: #0a0a0f;
-  transform: scale(1.15) translateY(-8px);
-  box-shadow: 0 30px 100px rgba(255, 215, 0, 0.6);
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .hamburger { display: flex; }
-  nav { 
-    position: fixed;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    background: var(--glass);
-    backdrop-filter: blur(50px);
-    flex-direction: column;
-    padding: 2rem;
-    gap: 2rem;
-    transform: translateY(-100%);
-    opacity: 0;
-    transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  }
-  nav.active {
-    transform: translateY(0);
-    opacity: 1;
-  }
-  nav a { margin: 0; }
-  
-  .dashboard-hero { padding: 180px 5% 80px; gap: 50px; }
-  .stats-dashboard { 
-    grid-template-columns: repeat(2, 1fr); 
-    gap: 28px; 
-    margin: 30px 0;
-  }
-  .skills-row { gap: 20px; padding: 20px 0; flex-wrap: wrap; justify-content: center; }
-  .skill-tag { 
-    padding: 16px 32px; 
-    font-size: 1rem; 
-  }
-  .categories-grid { 
-    grid-template-columns: 1fr; 
-    gap: 40px; 
-  }
-  .category-card { height: 480px; }
-  .category-image { height: 220px; }
-  .category-content { padding: 40px 32px 36px; }
-}
-
-@media (max-width: 480px) {
-  .stats-dashboard { grid-template-columns: 1fr; }
-  .category-card { height: 460px; }
-  .category-image { height: 200px; }
-  .category-content { padding: 32px 24px 28px; }
-  .skills-row { flex-direction: column; align-items: center; gap: 16px; }
-}
-</style>
+    /* ── RESPONSIVE ── */
+    @media (max-width: 640px) {
+      .project-grid { grid-template-columns: 1fr; padding: 1rem; }
+      .stats-bar { gap: 1.5rem; }
+    }
+  </style>
 </head>
-
 <body>
-<!-- HEADER -->
-<header id="header">
-  <div class="header-content">
-    <div class="logo">Abhishek Singh</div>
-    
-    <nav id="nav">
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="projects.html" class="active">Projects</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-    
-    <div class="hamburger" id="hamburger">
-      <span></span><span></span><span></span>
-    </div>
-  </div>
+
+<!-- ══════════════════════════════════ HEADER ══════════════════════════════════ -->
+<header>
+  <div class="header-badge">Data Science &nbsp;·&nbsp; BI Analytics &nbsp;·&nbsp; Web Development</div>
+  <h1>Abhishek Singh</h1>
+  <p>Projects Portfolio &nbsp;·&nbsp; Building analytics, ML models &amp; digital experiences</p>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="https://github.com/Abhishek-singh0416" target="_blank">GitHub Profile</a>
+  </nav>
 </header>
 
-<!-- DASHBOARD HERO -->
-<section class="dashboard-hero">
-  <!-- MAIN TITLE -->
-  <div>
-    <h1 class="hero-title">My Projects</h1>
-    <p class="hero-subtitle">
-      15+ production-ready projects in Data Science, Flutter Development & Web Applications built with cutting-edge technology
-    </p>
+<!-- ══════════════════════════════════ STATS ══════════════════════════════════ -->
+<div class="stats-bar">
+  <div class="stat"><div class="stat-num">34</div><div class="stat-label">Repositories</div></div>
+  <div class="stat"><div class="stat-num">9</div><div class="stat-label">ML / DS Projects</div></div>
+  <div class="stat"><div class="stat-num">8</div><div class="stat-label">BI Dashboards</div></div>
+  <div class="stat"><div class="stat-num">3+</div><div class="stat-label">Govt Clients</div></div>
+  <div class="stat"><div class="stat-num">6</div><div class="stat-label">Web Projects</div></div>
+</div>
+
+<!-- ══════════════════════ SECTION 1: FEATURED / BEST PROJECTS ══════════════════════ -->
+<div class="section-label"><span>⭐ Featured &amp; Best Projects</span></div>
+<div class="project-grid">
+
+  <!-- 1. Election System — GOVT REAL WORK -->
+  <div class="card card-featured">
+    <div class="card-img-wrap" style="position:relative;">
+      <span class="real-badge">🏛️ Govt Client</span>
+      <span class="star-badge">⭐ Featured</span>
+      <img class="card-img" src="https://images.unsplash.com/photo-1540910419892-4a36d2c3266c?w=900&q=80" alt="Election System" />
+    </div>
+    <div class="card-body">
+      <div class="card-tags">
+        <span class="tag tag-bi">Zoho Creator</span>
+        <span class="tag tag-bi">Zoho Analytics</span>
+        <span class="tag tag-govt">Government</span>
+      </div>
+      <div class="card-title">Election Control &amp; Incident Reporting System</div>
+      <div class="card-desc">A complete end-to-end operational system built with Zoho Creator + Zoho Analytics for real-time election incident management. Digitizes the full workflow: incident reporting → complaint registration → field verification → officer assignment → escalation tracking → resolution analytics. Features dedicated SLA-delay dashboards and multi-role access (Admin / Field Officer).</div>
+    </div>
+    <div class="card-footer">
+      <div class="card-meta">
+        <span>🏛️ Election Commission</span>
+        <span>📊 3 Dashboards</span>
+      </div>
+      <a class="github-btn" href="https://github.com/Abhishek-singh0416/Election-Control-Incident-Reporting-System" target="_blank">
+        <svg width="14" height="14" fill="currentColor" viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+        View on GitHub
+      </a>
+    </div>
   </div>
 
-  <!-- STATS DASHBOARD WITH RELEVANT IMAGES -->
-  <div class="stats-dashboard">
-    <div class="stat-card">
-      <div class="stat-image" style="background-image: url('https://images.unsplash.com/photo-1715024487309-7f23e4d4d7d1?w=120&h=120&fit=crop')"></div>
-      <div class="stat-number">15+</div>
-      <div class="stat-label">Total Projects</div>
+  <!-- 2. Risk Management System -->
+  <div class="card">
+    <div class="card-img-wrap" style="position:relative;">
+      <span class="real-badge">🏢 Enterprise</span>
+      <img class="card-img" src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=700&q=80" alt="Risk Management" />
     </div>
-    
-    <div class="stat-card">
-      <div class="stat-image" style="background-image: url('https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=120&h=120&fit=crop')"></div>
-      <div class="stat-number">5+</div>
-      <div class="stat-label">Live Apps</div>
+    <div class="card-body">
+      <div class="card-tags">
+        <span class="tag tag-bi">Zoho Creator</span>
+        <span class="tag tag-bi">Zoho Analytics</span>
+      </div>
+      <div class="card-title">Enterprise Risk Management System</div>
+      <div class="card-desc">Centralized Risk Governance Platform for enterprise-wide risk identification, control monitoring, mitigation tracking, and compliance reporting. Features role-based admin and department dashboards with overdue risk alerts and control effectiveness scoring.</div>
     </div>
-    
-    <div class="stat-card">
-      <div class="stat-image" style="background-image: url('https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=120&h=120&fit=crop')"></div>
-      <div class="stat-number">95%</div>
-      <div class="stat-label">Accuracy</div>
-    </div>
-    
-    <div class="stat-card">
-      <div class="stat-image" style="background-image: url('https://images.unsplash.com/photo-1715024487309-7f23e4d4d7d1?w=120&h=120&fit=crop')"></div>
-      <div class="stat-number">50K+</div>
-      <div class="stat-label">Data Analyzed</div>
+    <div class="card-footer">
+      <div class="card-meta"><span>🛡️ Enterprise GRC</span><span>📋 2 Dashboards</span></div>
+      <a class="github-btn" href="https://github.com/Abhishek-singh0416/Risk-Management-System" target="_blank">
+        <svg width="14" height="14" fill="currentColor" viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+        View on GitHub
+      </a>
     </div>
   </div>
 
-  <!-- SKILLS ROW -->
-  <div class="skills-row">
-    <div class="skill-tag">Python</div>
-    <div class="skill-tag">Flutter</div>
-    <div class="skill-tag">Firebase</div>
-    <div class="skill-tag">Machine Learning</div>
-    <div class="skill-tag">Google Cloud</div>
-    <div class="skill-tag">React</div>
-    <div class="skill-tag">Power BI</div>
-    <div class="skill-tag">SQL</div>
-  </div>
-
-  <!-- PROJECT CATEGORIES WITH TOPIC-RELEVANT IMAGES -->
-  <div class="categories-grid">
-    <!-- DATA SCIENCE -->
-    <div class="category-card" data-category="data">
-      <div class="category-image" style="background-image: url('https://images.unsplash.com/photo-1715024487309-7f23e4d4d7d1?w=420&h=260&fit=crop')">
-        <div class="category-overlay">
-          <i class="fas fa-chart-line"></i>
-        </div>
-      </div>
-      <div class="category-content">
-        <h3 class="category-title">Data Science & ML</h3>
-        <p class="category-description">
-          Play Store Analysis, Netflix Recommendation, Multi Disease Prediction, 
-          Bike Sharing Forecast, Airbnb Analytics, Tweet Sentiment
-        </p>
-        <div class="category-count">6 Projects</div>
-      </div>
+  <!-- 3. NSDC SLA Dashboard -->
+  <div class="card">
+    <div class="card-img-wrap" style="position:relative;">
+      <span class="real-badge">🇮🇳 NSDC Client</span>
+      <img class="card-img" src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=700&q=80" alt="SLA Dashboard" />
     </div>
-
-    <!-- MOBILE APPS -->
-    <div class="category-card" data-category="mobile">
-      <div class="category-image" style="background-image: url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=420&h=260&fit=crop')">
-        <div class="category-overlay">
-          <i class="fab fa-mobile-alt"></i>
-        </div>
+    <div class="card-body">
+      <div class="card-tags">
+        <span class="tag tag-bi">Zoho Analytics</span>
+        <span class="tag tag-govt">NSDC / Govt</span>
       </div>
-      <div class="category-content">
-        <h3 class="category-title">Flutter Apps</h3>
-        <p class="category-description">
-          Hicar (Ola/Uber), SmartBill AI, Excellence E-Learning, 
-          Let's Drive Driver Booking
-        </p>
-        <div class="category-count">4 Projects</div>
-      </div>
+      <div class="card-title">Ticket SLA Analytics Dashboard — NSDC</div>
+      <div class="card-desc">Month-wise SLA breach analytics for the National Skill Development Corporation. Tracks SLA compliance rates by agent, category, and time period with breach trend analysis and early-warning reporting — protecting contractual SLA obligations worth crores.</div>
     </div>
-
-    <!-- WEB DEVELOPMENT -->
-    <div class="category-card" data-category="web">
-      <div class="category-image" style="background-image: url('https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=420&h=260&fit=crop')">
-        <div class="category-overlay">
-          <i class="fas fa-globe"></i>
-        </div>
-      </div>
-      <div class="category-content">
-        <h3 class="category-title">Web Development</h3>
-        <p class="category-description">
-          Crystallite.in, Excellence.site Dashboard, Let's Drive Web Panel, 
-          MSI Interiors Portfolio
-        </p>
-        <div class="category-count">5 Projects</div>
-      </div>
+    <div class="card-footer">
+      <div class="card-meta"><span>📊 SLA Monitoring</span></div>
+      <a class="github-btn" href="https://github.com/Abhishek-singh0416/Case-Study-Ticket-SLA-Analytics-Dashboard-zoho-analytics" target="_blank">
+        <svg width="14" height="14" fill="currentColor" viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+        View on GitHub
+      </a>
     </div>
   </div>
-</section>
 
-<script>
-class ProjectsDashboard {
-  constructor() {
-    this.initHeader();
-    this.initMobileMenu();
-    this.initAnimations();
-    this.initCategoryCards();
-  }
+</div>
 
-  initHeader() {
-    const header = document.getElementById('header');
-    let ticking = false;
-    const updateHeader = () => {
-      if (window.scrollY > 100) {
-        header.classList.add('scrolled');
-      } else {
-        header.classList.remove('scrolled');
-      }
-      ticking = false;
-    };
-    window.addEventListener('scroll', () => {
-      if (!ticking) {
-        requestAnimationFrame(updateHeader);
-        ticking = true;
-      }
-    }, { passive: true });
-  }
+<!-- ══════════════════════ SECTION 2: MACHINE LEARNING ══════════════════════ -->
+<div class="divider"></div>
+<div class="section-label"><span>🤖 Machine Learning &amp; Data Science</span></div>
+<div class="project-grid">
 
-  initMobileMenu() {
-    const hamburger = document.getElementById('hamburger');
-    const nav = document.getElementById('nav');
-    
-    hamburger.addEventListener('click', (e) => {
-      e.stopPropagation();
-      hamburger.classList.toggle('active');
-      nav.classList.toggle('active');
-      document.body.style.overflow = hamburger.classList.contains('active') ? 'hidden' : '';
-    });
+  <!-- Credit Card Default -->
+  <div class="card">
+    <div class="card-img-wrap">
+      <img class="card-img" src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=700&q=80" alt="Credit Card Default" />
+    </div>
+    <div class="card-body">
+      <div class="card-tags">
+        <span class="tag tag-ml">Machine Learning</span>
+        <span class="tag tag-ml">Classification</span>
+      </div>
+      <div class="card-title">Credit Card Default Prediction</div>
+      <div class="card-desc">Predicts probability of credit card default for 30,000 customers (Taiwan dataset). Risk management approach — estimates default probability rather than binary outcome, enabling tier-based credit decisions. Includes formal project report PDF.</div>
+    </div>
+    <div class="card-footer">
+      <div class="card-meta"><span>🐍 Python</span><span>📈 30K records</span></div>
+      <a class="github-btn" href="https://github.com/Abhishek-singh0416/Credit-Card-Default-Prediction" target="_blank">
+        <svg width="14" height="14" fill="currentColor" viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+        View on GitHub
+      </a>
+    </div>
+  </div>
 
-    document.addEventListener('click', () => {
-      hamburger.classList.remove('active');
-      nav.classList.remove('active');
-      document.body.style.overflow = '';
-    });
-  }
+  <!-- Yes Bank Stock -->
+  <div class="card">
+    <div class="card-img-wrap">
+      <img class="card-img" src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=700&q=80" alt="Stock Prediction" />
+    </div>
+    <div class="card-body">
+      <div class="card-tags">
+        <span class="tag tag-ml">Regression</span>
+        <span class="tag tag-ml">Time Series</span>
+      </div>
+      <div class="card-title">Yes Bank Stock Closing Price Prediction</div>
+      <div class="card-desc">Regression model to forecast Yes Bank's daily closing stock price using historical OHLC data. Particularly challenging due to Yes Bank's 2020 RBI crisis causing extreme non-stationarity. Most actively developed project with 11 commits.</div>
+    </div>
+    <div class="card-footer">
+      <div class="card-meta"><span>📊 Jupyter</span><span>🔄 11 commits</span></div>
+      <a class="github-btn" href="https://github.com/Abhishek-singh0416/yesbank-stock-closing-price-prediction" target="_blank">
+        <svg width="14" height="14" fill="currentColor" viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+        View on GitHub
+      </a>
+    </div>
+  </div>
 
-  initAnimations() {
-    const observerOptions = {
-      threshold: 0.15,
-      rootMargin: '0px 0px -80px 0px'
-    };
+  <!-- Bank Churn -->
+  <div class="card">
+    <div class="card-img-wrap">
+      <img class="card-img" src="https://images.unsplash.com/photo-1601597111158-2fceff292cdc?w=700&q=80" alt="Bank Churn" />
+    </div>
+    <div class="card-body">
+      <div class="card-tags">
+        <span class="tag tag-ml">Classification</span>
+        <span class="tag tag-ml">ML Pipeline</span>
+      </div>
+      <div class="card-title">Bank Customer Churn Prediction Model</div>
+      <div class="card-desc">Predicts whether a bank customer will close their account using demographic and account activity features. Uses Random Forest / XGBoost classifiers with ROC-AUC evaluation. Directly applicable to CRM-based retention systems at retail banks.</div>
+    </div>
+    <div class="card-footer">
+      <div class="card-meta"><span>🐍 Scikit-learn</span><span>📊 Jupyter</span></div>
+      <a class="github-btn" href="https://github.com/Abhishek-singh0416/Bank_Customer_Churn_Model" target="_blank">
+        <svg width="14" height="14" fill="currentColor" viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+        View on GitHub
+      </a>
+    </div>
+  </div>
 
-    const statObserver = new IntersectionObserver((entries) => {
-      entries.forEach((entry, index) => {
-        if (entry.isIntersecting) {
-          entry.target.style.opacity = '1';
-          entry.target.style.transform = 'translateY(0) scale(1)';
-        }
-      });
-    }, observerOptions);
+  <!-- Netflix Clustering -->
+  <div class="card">
+    <div class="card-img-wrap">
+      <img class="card-img" src="https://images.unsplash.com/photo-1522869635100-9f4c5e86aa37?w=700&q=80" alt="Netflix Clustering" />
+    </div>
+    <div class="card-body">
+      <div class="card-tags">
+        <span class="tag tag-ml">Unsupervised ML</span>
+        <span class="tag tag-nlp">NLP</span>
+        <span class="tag tag-ml">K-Means</span>
+      </div>
+      <div class="card-title">Netflix Movies &amp; TV Shows Clustering</div>
+      <div class="card-desc">Clusters Netflix content using NLP (TF-IDF vectorization) on show descriptions, genres, and cast data. K-Means clustering groups similar titles for recommendation engine foundations. Includes PCA/t-SNE visualizations for cluster exploration.</div>
+    </div>
+    <div class="card-footer">
+      <div class="card-meta"><span>🎬 Netflix Dataset</span><span>📊 5 commits</span></div>
+      <a class="github-btn" href="https://github.com/Abhishek-singh0416/Netflix-Movies-and-TV-Shows-Clustering" target="_blank">
+        <svg width="14" height="14" fill="currentColor" viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+        View on GitHub
+      </a>
+    </div>
+  </div>
 
-    document.querySelectorAll('.stat-card').forEach((card, index) => {
-      card.style.opacity = '0';
-      card.style.transform = 'translateY(50px) scale(0.95)';
-      card.style.transition = `all 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) ${index * 0.2}s`;
-      statObserver.observe(card);
-    });
+  <!-- COVID Tweet Sentiment -->
+  <div class="card">
+    <div class="card-img-wrap">
+      <img class="card-img" src="https://images.unsplash.com/photo-1611605698335-8b1569810432?w=700&q=80" alt="Tweet Sentiment" />
+    </div>
+    <div class="card-body">
+      <div class="card-tags">
+        <span class="tag tag-nlp">NLP</span>
+        <span class="tag tag-ml">Sentiment Analysis</span>
+      </div>
+      <div class="card-title">Coronavirus Tweet Sentiment Analysis</div>
+      <div class="card-desc">Multi-class NLP classifier that detects public sentiment in COVID-19 tweets (Positive / Negative / Neutral / Extremely Positive / Extremely Negative). Uses TF-IDF + Naive Bayes/Logistic Regression with WordCloud visualizations. 6 commits.</div>
+    </div>
+    <div class="card-footer">
+      <div class="card-meta"><span>📝 NLP</span><span>🐦 Twitter Data</span></div>
+      <a class="github-btn" href="https://github.com/Abhishek-singh0416/Coronavirus-Tweet-Sentiment-Analysis" target="_blank">
+        <svg width="14" height="14" fill="currentColor" viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+        View on GitHub
+      </a>
+    </div>
+  </div>
 
-    const categoryObserver = new IntersectionObserver((entries) => {
-      entries.forEach((entry, index) => {
-        if (entry.isIntersecting) {
-          entry.target.style.opacity = '1';
-          entry.target.style.transform = 'translateY(0) scale(1)';
-        }
-      });
-    }, observerOptions);
+  <!-- Bike Sharing -->
+  <div class="card">
+    <div class="card-img-wrap">
+      <img class="card-img" src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=700&q=80" alt="Bike Sharing" />
+    </div>
+    <div class="card-body">
+      <div class="card-tags">
+        <span class="tag tag-ml">Regression</span>
+        <span class="tag tag-eda">Feature Engineering</span>
+      </div>
+      <div class="card-title">Bike Sharing Demand Prediction</div>
+      <div class="card-desc">Forecasts hourly bike rental demand in Seoul using weather data (temperature, humidity, wind, solar radiation, rainfall, snowfall) and time features. Helps operators redistribute bikes proactively to avoid empty/overloaded stations.</div>
+    </div>
+    <div class="card-footer">
+      <div class="card-meta"><span>🚲 Seoul Dataset</span><span>☁️ Weather Features</span></div>
+      <a class="github-btn" href="https://github.com/Abhishek-singh0416/bike-sharing-demand-prediction" target="_blank">
+        <svg width="14" height="14" fill="currentColor" viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+        View on GitHub
+      </a>
+    </div>
+  </div>
 
-    document.querySelectorAll('.category-card').forEach((card, index) => {
-      card.style.opacity = '0';
-      card.style.transform = 'translateY(80px) scale(0.95)';
-      card.style.transition = `all 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) ${index * 0.25}s`;
-      categoryObserver.observe(card);
-    });
-  }
+  <!-- Play Store EDA -->
+  <div class="card">
+    <div class="card-img-wrap">
+      <img class="card-img" src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=700&q=80" alt="Play Store" />
+    </div>
+    <div class="card-body">
+      <div class="card-tags">
+        <span class="tag tag-eda">EDA</span>
+        <span class="tag tag-nlp">Review Analysis</span>
+      </div>
+      <div class="card-title">Play Store App Review Analysis</div>
+      <div class="card-desc">EDA project analyzing Google Play Store app data — categories, ratings, sizes, pricing, and user reviews. Uncovers what drives app engagement and success. Actionable insights for Android developers on category saturation and rating benchmarks.</div>
+    </div>
+    <div class="card-footer">
+      <div class="card-meta"><span>📱 Google Play</span><span>📊 EDA</span></div>
+      <a class="github-btn" href="https://github.com/Abhishek-singh0416/play_store_app_review_analysis" target="_blank">
+        <svg width="14" height="14" fill="currentColor" viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+        View on GitHub
+      </a>
+    </div>
+  </div>
 
-  initCategoryCards() {
-    document.querySelectorAll('.category-card').forEach(card => {
-      card.addEventListener('click', () => {
-        const category = card.getAttribute('data-category');
-        console.log('Navigate to:', category);
-        // TODO: window.location.href = `projects-${category}.html`;
-      });
-    });
-  }
-}
+  <!-- Hotel Booking EDA -->
+  <div class="card">
+    <div class="card-img-wrap">
+      <img class="card-img" src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=700&q=80" alt="Hotel Booking" />
+    </div>
+    <div class="card-body">
+      <div class="card-tags">
+        <span class="tag tag-eda">EDA</span>
+        <span class="tag tag-eda">Hospitality</span>
+      </div>
+      <div class="card-title">Hotel Booking Analysis — EDA Project</div>
+      <div class="card-desc">Exploratory analysis of City Hotel and Resort Hotel booking data. Investigates cancellation drivers, lead time patterns, guest nationality, meal preferences, and seasonal demand — providing hotel managers with actionable revenue management insights.</div>
+    </div>
+    <div class="card-footer">
+      <div class="card-meta"><span>🏨 Hospitality</span><span>📊 Pandas / Seaborn</span></div>
+      <a class="github-btn" href="https://github.com/Abhishek-singh0416/hotel-booking-analysis-eda-project" target="_blank">
+        <svg width="14" height="14" fill="currentColor" viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+        View on GitHub
+      </a>
+    </div>
+  </div>
 
-if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', () => new ProjectsDashboard());
-} else {
-  new ProjectsDashboard();
-}
-</script>
+  <!-- Diabetes Prediction -->
+  <div class="card">
+    <div class="card-img-wrap">
+      <img class="card-img" src="https://images.unsplash.com/photo-1576671081837-49000212a370?w=700&q=80" alt="Diabetes Prediction" />
+    </div>
+    <div class="card-body">
+      <div class="card-tags">
+        <span class="tag tag-ml">Healthcare ML</span>
+        <span class="tag tag-ml">Classification</span>
+      </div>
+      <div class="card-title">Diabetes Prediction Model</div>
+      <div class="card-desc">Binary classification model predicting diabetes diagnosis using health metrics (glucose level, BMI, age, insulin, blood pressure). Built on the PIMA Indians Diabetes Dataset. Applicable to early screening tools in healthcare and telemedicine apps.</div>
+    </div>
+    <div class="card-footer">
+      <div class="card-meta"><span>🏥 Healthcare</span><span>🐍 Python</span></div>
+      <a class="github-btn" href="https://github.com/Abhishek-singh0416/multidesesis" target="_blank">
+        <svg width="14" height="14" fill="currentColor" viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+        View on GitHub
+      </a>
+    </div>
+  </div>
+
+</div>
+
+<!-- ══════════════════════ SECTION 3: BI DASHBOARDS ══════════════════════ -->
+<div class="divider"></div>
+<div class="section-label"><span>📊 Business Intelligence &amp; Zoho Analytics Dashboards</span></div>
+<div class="project-grid">
+
+  <!-- SIDH Ticket Overview -->
+  <div class="card">
+    <div class="card-img-wrap" style="position:relative;">
+      <span class="real-badge">🇮🇳 Skill India / SIDH</span>
+      <img class="card-img" src="https://images.unsplash.com/photo-1553877522-43269d4ea984?w=700&q=80" alt="Ticket Dashboard" />
+    </div>
+    <div class="card-body">
+      <div class="card-tags">
+        <span class="tag tag-bi">Zoho Analytics</span>
+        <span class="tag tag-govt">Skill India</span>
+      </div>
+      <div class="card-title">Ticket Overview Dashboard — Skill India Digital Hub</div>
+      <div class="card-desc">Support ticket analytics built by integrating Zoho Desk data for the Skill India Digital Hub (SIDH) — Ministry of Skill Development &amp; Entrepreneurship, Govt of India. Tracks ticket volumes, resolution rates, agent performance, and category-wise breakdowns.</div>
+    </div>
+    <div class="card-footer">
+      <div class="card-meta"><span>🎫 Support Analytics</span></div>
+      <a class="github-btn" href="https://github.com/Abhishek-singh0416/Case-Study-Ticket-Overview-Dashboard-zoho-analytics" target="_blank">
+        <svg width="14" height="14" fill="currentColor" viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+        View on GitHub
+      </a>
+    </div>
+  </div>
+
+  <!-- JKVP Dashboard -->
+  <div class="card">
+    <div class="card-img-wrap" style="position:relative;">
+      <span class="real-badge">🏛️ Govt Program</span>
+      <img class="card-img" src="https://images.unsplash.com/photo-1531482615713-2afd69097998?w=700&q=80" alt="JKVP Dashboard" />
+    </div>
+    <div class="card-body">
+      <div class="card-tags">
+        <span class="tag tag-bi">Zoho Analytics</span>
+        <span class="tag tag-govt">Livelihood Analytics</span>
+      </div>
+      <div class="card-title">JKVP Beneficiary Survey — Impact &amp; Livelihood Analytics</div>
+      <div class="card-desc">Impact assessment dashboard for the JKVP government skill training program. Tracks income improvement, employment transitions, skill enhancement, and entrepreneurship outcomes of beneficiaries — transforming survey data into measurable program KPIs.</div>
+    </div>
+    <div class="card-footer">
+      <div class="card-meta"><span>📋 Social Impact</span></div>
+      <a class="github-btn" href="https://github.com/Abhishek-singh0416/JKVP-Beneficiary-Survey-Dashboard-Impact-Livelihood-Analytics" target="_blank">
+        <svg width="14" height="14" fill="currentColor" viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+        View on GitHub
+      </a>
+    </div>
+  </div>
+
+  <!-- MIS Employee Dashboard -->
+  <div class="card">
+    <div class="card-img-wrap">
+      <img class="card-img" src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=700&q=80" alt="Employee MIS" />
+    </div>
+    <div class="card-body">
+      <div class="card-tags">
+        <span class="tag tag-bi">Zoho Analytics</span>
+        <span class="tag tag-bi">Zoho People</span>
+      </div>
+      <div class="card-title">MIS Dashboard — Employee Productivity &amp; Resource Analytics</div>
+      <div class="card-desc">Comprehensive HR analytics MIS dashboard integrating Zoho People timesheet data. Monitors employee productivity, resource utilization, project allocation, and timesheet compliance across departments. Delivered with executive PowerPoint presentation.</div>
+    </div>
+    <div class="card-footer">
+      <div class="card-meta"><span>👥 HR Analytics</span><span>📊 + PPT Report</span></div>
+      <a class="github-btn" href="https://github.com/Abhishek-singh0416/MIS-Dashboard-Employee-Productivity-Resource-Analytics" target="_blank">
+        <svg width="14" height="14" fill="currentColor" viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+        View on GitHub
+      </a>
+    </div>
+  </div>
+
+  <!-- Medicine Dashboard -->
+  <div class="card">
+    <div class="card-img-wrap">
+      <img class="card-img" src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=700&q=80" alt="Medicine Dashboard" />
+    </div>
+    <div class="card-body">
+      <div class="card-tags">
+        <span class="tag tag-bi">Zoho Analytics</span>
+        <span class="tag tag-bi">Healthcare BI</span>
+      </div>
+      <div class="card-title">Medicine Overview Dashboard — Inventory &amp; Consumption Analytics</div>
+      <div class="card-desc">Hospital pharmacy analytics dashboard tracking medicine requests, department-wise allocation, stock consumption trends, pending requests, and monthly stock movement. Prevents stockouts and reduces wastage in hospital pharmacy chains.</div>
+    </div>
+    <div class="card-footer">
+      <div class="card-meta"><span>💊 Healthcare</span><span>📋 Inventory</span></div>
+      <a class="github-btn" href="https://github.com/Abhishek-singh0416/Medicine-Overview-Dashboard-Inventory-Consumption-Analytics" target="_blank">
+        <svg width="14" height="14" fill="currentColor" viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+        View on GitHub
+      </a>
+    </div>
+  </div>
+
+  <!-- Project Governance -->
+  <div class="card">
+    <div class="card-img-wrap">
+      <img class="card-img" src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=700&q=80" alt="Project Governance" />
+    </div>
+    <div class="card-body">
+      <div class="card-tags">
+        <span class="tag tag-bi">Zoho Analytics</span>
+        <span class="tag tag-bi">PMO Dashboard</span>
+      </div>
+      <div class="card-title">Project Governance &amp; Execution Analytics System</div>
+      <div class="card-desc">Centralized Project Monitoring &amp; Performance Dashboard for leadership visibility across multiple business units. Tracks project progress, task execution, delay root causes, resource utilization, and completion analytics for PMO governance reporting.</div>
+    </div>
+    <div class="card-footer">
+      <div class="card-meta"><span>📁 PMO</span><span>🏢 Multi-BU</span></div>
+      <a class="github-btn" href="https://github.com/Abhishek-singh0416/Zoho-Analytics-Based-Project-Governance-Execution-Analytics-System" target="_blank">
+        <svg width="14" height="14" fill="currentColor" viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+        View on GitHub
+      </a>
+    </div>
+  </div>
+
+  <!-- Sales Power BI -->
+  <div class="card">
+    <div class="card-img-wrap">
+      <img class="card-img" src="https://images.unsplash.com/photo-1543286386-713bdd548da4?w=700&q=80" alt="Sales Power BI" />
+    </div>
+    <div class="card-body">
+      <div class="card-tags">
+        <span class="tag tag-pbi">Power BI</span>
+        <span class="tag tag-bi">Sales Analytics</span>
+      </div>
+      <div class="card-title">Sales Insight Dashboard — Power BI</div>
+      <div class="card-desc">Sales analytics dashboard project using Microsoft Power BI for tracking revenue, regional performance, product-wise sales breakdown, and growth trend analysis. Demonstrates Power BI proficiency alongside Zoho Analytics expertise.</div>
+    </div>
+    <div class="card-footer">
+      <div class="card-meta"><span>📊 Power BI</span><span>💰 Sales KPIs</span></div>
+      <a class="github-btn" href="https://github.com/Abhishek-singh0416/Sales_insgiht_powerBI" target="_blank">
+        <svg width="14" height="14" fill="currentColor" viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+        View on GitHub
+      </a>
+    </div>
+  </div>
+
+</div>
+
+<!-- ══════════════════════ SECTION 4: WEB DEVELOPMENT ══════════════════════ -->
+<div class="divider"></div>
+<div class="section-label"><span>🌐 Web Development Projects</span></div>
+<div class="project-grid">
+
+  <!-- Carystallite -->
+  <div class="card">
+    <div class="card-img-wrap">
+      <img class="card-img" src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=700&q=80" alt="Carystallite Website" />
+    </div>
+    <div class="card-body">
+      <div class="card-tags">
+        <span class="tag tag-web">HTML / CSS / JS</span>
+        <span class="tag tag-web">GitHub Pages</span>
+      </div>
+      <div class="card-title">Carystallite — Company Website</div>
+      <div class="card-desc">Full multi-page company website with Blog, Contact, and About sections, video background, custom domain, and media assets. The most actively maintained repo on the profile — 119 commits — showing real professional web development practice with consistent version control.</div>
+    </div>
+    <div class="card-footer">
+      <div class="card-meta"><span>🔄 119 commits</span><span>🌐 Custom Domain</span></div>
+      <a class="github-btn" href="https://github.com/Abhishek-singh0416/carystallite-" target="_blank">
+        <svg width="14" height="14" fill="currentColor" viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+        View on GitHub
+      </a>
+    </div>
+  </div>
+
+  <!-- MSI Interiors -->
+  <div class="card">
+    <div class="card-img-wrap" style="position:relative;">
+      <span class="real-badge">🏠 Client Project</span>
+      <img class="card-img" src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=700&q=80" alt="MSI Interiors" />
+    </div>
+    <div class="card-body">
+      <div class="card-tags">
+        <span class="tag tag-web">HTML / CSS</span>
+        <span class="tag tag-web">Freelance</span>
+      </div>
+      <div class="card-title">MSI Interiors — Client Business Website</div>
+      <div class="card-desc">Professional website for MSI Interiors, a Delhi NCR-based interior design and turnkey project firm. Features portfolio gallery, about, contact, and consultation form pages. Deployed on custom domain via GitHub Pages. Freelance client delivery.</div>
+    </div>
+    <div class="card-footer">
+      <div class="card-meta"><span>🏠 Interior Design</span><span>🔄 17 commits</span></div>
+      <a class="github-btn" href="https://github.com/Abhishek-singh0416/msi-intriors" target="_blank">
+        <svg width="14" height="14" fill="currentColor" viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+        View on GitHub
+      </a>
+    </div>
+  </div>
+
+  <!-- Exilence E-learning -->
+  <div class="card">
+    <div class="card-img-wrap">
+      <img class="card-img" src="https://images.unsplash.com/photo-1501504905252-473c47e087f8?w=700&q=80" alt="E-learning" />
+    </div>
+    <div class="card-body">
+      <div class="card-tags">
+        <span class="tag tag-web">HTML / CSS</span>
+        <span class="tag tag-web">EdTech</span>
+      </div>
+      <div class="card-title">Exilence — E-Learning Platform Website</div>
+      <div class="card-desc">Modern e-learning platform website designed to empower students and teachers through an interactive, secure, and career-focused digital learning environment. Multi-page layout deployed on custom domain with GitHub Pages.</div>
+    </div>
+    <div class="card-footer">
+      <div class="card-meta"><span>🎓 EdTech</span><span>🌐 Custom Domain</span></div>
+      <a class="github-btn" href="https://github.com/Abhishek-singh0416/exilence" target="_blank">
+        <svg width="14" height="14" fill="currentColor" viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+        View on GitHub
+      </a>
+    </div>
+  </div>
+
+  <!-- Nidhi CA Profile -->
+  <div class="card">
+    <div class="card-img-wrap" style="position:relative;">
+      <span class="real-badge">👤 Client Project</span>
+      <img class="card-img" src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=700&q=80" alt="CA Profile" />
+    </div>
+    <div class="card-body">
+      <div class="card-tags">
+        <span class="tag tag-web">HTML / CSS</span>
+        <span class="tag tag-web">Freelance</span>
+      </div>
+      <div class="card-title">Nidhi — CA Professional Profile Website</div>
+      <div class="card-desc">Personal professional profile website for a Chartered Accountant client, featuring profile presentation, contact form, and professional services overview. Deployed on a live custom domain — a real freelance client delivery.</div>
+    </div>
+    <div class="card-footer">
+      <div class="card-meta"><span>💼 CA Profile</span><span>🔄 8 commits</span></div>
+      <a class="github-btn" href="https://github.com/Abhishek-singh0416/nidhi-ca-pofile-" target="_blank">
+        <svg width="14" height="14" fill="currentColor" viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+        View on GitHub
+      </a>
+    </div>
+  </div>
+
+  <!-- Personal Portfolio -->
+  <div class="card">
+    <div class="card-img-wrap">
+      <img class="card-img" src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?w=700&q=80" alt="Portfolio" />
+    </div>
+    <div class="card-body">
+      <div class="card-tags">
+        <span class="tag tag-web">HTML / CSS</span>
+        <span class="tag tag-web">Portfolio</span>
+      </div>
+      <div class="card-title">Personal Portfolio Website</div>
+      <div class="card-desc">Personal developer portfolio website showcasing skills, projects, and contact information. Multi-page layout with custom domain deployment via GitHub Pages. Professional online presence for job applications and client pitches.</div>
+    </div>
+    <div class="card-footer">
+      <div class="card-meta"><span>🙋 Personal Brand</span><span>🌐 GitHub Pages</span></div>
+      <a class="github-btn" href="https://github.com/Abhishek-singh0416/my-portfolio" target="_blank">
+        <svg width="14" height="14" fill="currentColor" viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+        View on GitHub
+      </a>
+    </div>
+  </div>
+
+  <!-- Django Project -->
+  <div class="card">
+    <div class="card-img-wrap">
+      <img class="card-img" src="https://images.unsplash.com/photo-1555066931-4365d14431b9?w=700&q=80" alt="Django" />
+    </div>
+    <div class="card-body">
+      <div class="card-tags">
+        <span class="tag tag-web">Python</span>
+        <span class="tag tag-web">Django</span>
+      </div>
+      <div class="card-title">Django Web Application</div>
+      <div class="card-desc">Backend web application built with Python's Django framework. Demonstrates full-stack capability beyond front-end HTML/CSS, with server-side routing, database integration (SQLite), and Django's ORM — foundational backend development skills.</div>
+    </div>
+    <div class="card-footer">
+      <div class="card-meta"><span>🐍 Python / Django</span><span>🗄️ SQLite</span></div>
+      <a class="github-btn" href="https://github.com/Abhishek-singh0416/django-project" target="_blank">
+        <svg width="14" height="14" fill="currentColor" viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+        View on GitHub
+      </a>
+    </div>
+  </div>
+
+</div>
+
+<!-- ══════════════════════════════════ FOOTER ══════════════════════════════════ -->
+<footer>
+  <p>
+    © 2025 Abhishek Singh &nbsp;·&nbsp;
+    <a href="https://github.com/Abhishek-singh0416" target="_blank">GitHub Profile</a>
+    &nbsp;·&nbsp; Thanks for visiting.
+  </p>
+</footer>
 
 </body>
 </html>
